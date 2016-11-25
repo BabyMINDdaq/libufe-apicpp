@@ -1,0 +1,2378 @@
+{
+  "$type": "UnigeFrontEnd.Config.DescRoot",
+  "Name": "FEB_CONFIG",
+  "Version": "1.2",
+  "DeviceMemorySize": 2048,
+  "MinFpgaVersion": "2.5",
+  "HardwareVIds": [
+    {
+      "Id": 0,
+      "ShortName": "V0",
+      "FriendlyName": "Baseline hardware version"
+    }
+  ],
+  "FirmwareVIds": [
+    {
+      "MajorId": 2,
+      "MinorId": 3,
+      "ShortName": "Top Design 2.3",
+      "FriendlyName": "TDC+ADC FIFO-L0 error fixed"
+    },
+    {
+      "MajorId": 2,
+      "MinorId": 4,
+      "ShortName": "Top Design 2.4",
+      "FriendlyName": "TDC+ADC dble TDC event fixed"
+    },
+    {
+      "MajorId": 2,
+      "MinorId": 5,
+      "ShortName": "Top Design 2.5",
+      "FriendlyName": "TDC+ADC HG/LG separated"
+    },
+    {
+      "MajorId": 3,
+      "MinorId": 0,
+      "ShortName": "Top Design 3.0",
+      "FriendlyName": "TDC+ADC+Uart protocol"
+    }
+  ],
+  "UserSetCommands": [
+    {
+      "Index": 0,
+      "Name": "Probe"
+    }
+  ],
+  "Board": {
+    "DirectParameters": {
+      "Parameters": [
+        {
+          "$type": "UnigeFrontEnd.Config.DescVariable",
+          "Name": "ReadoutSigStartReset",
+          "Type": "Bool",
+          "Default": false,
+          "Min": 0,
+          "Max": 1,
+          "BitSize": 1,
+          "MemoryLayout": {
+            "Index": 0
+          },
+          "Behavior": "AutoResetNotSaved"
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DescVariable",
+          "Name": "SpillCntReset",
+          "Type": "Bool",
+          "Default": false,
+          "Min": 0,
+          "Max": 1,
+          "BitSize": 1,
+          "MemoryLayout": {
+            "Index": 1
+          },
+          "Behavior": "AutoResetNotSaved"
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DescVariable",
+          "Name": "TriggerCntReset",
+          "Type": "Bool",
+          "Default": false,
+          "Min": 0,
+          "Max": 1,
+          "BitSize": 1,
+          "MemoryLayout": {
+            "Index": 2
+          },
+          "Behavior": "AutoResetNotSaved"
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DescVariable",
+          "Name": "L0FifoReset",
+          "Type": "Bool",
+          "Default": false,
+          "Min": 0,
+          "Max": 1,
+          "BitSize": 1,
+          "MemoryLayout": {
+            "Index": 3
+          },
+          "Behavior": "AutoResetNotSaved"
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DescVariable",
+          "Name": "L1FifoReset",
+          "Type": "Bool",
+          "Default": false,
+          "Min": 0,
+          "Max": 1,
+          "BitSize": 1,
+          "MemoryLayout": {
+            "Index": 4
+          },
+          "Behavior": "AutoResetNotSaved"
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DescVariable",
+          "Name": "L2FifoReset",
+          "Type": "Bool",
+          "Default": false,
+          "Min": 0,
+          "Max": 1,
+          "BitSize": 1,
+          "MemoryLayout": {
+            "Index": 5
+          },
+          "Behavior": "AutoResetNotSaved"
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DescVariable",
+          "Name": "L1AdcReset",
+          "Type": "Bool",
+          "Default": false,
+          "Min": 0,
+          "Max": 1,
+          "BitSize": 1,
+          "MemoryLayout": {
+            "Index": 6
+          },
+          "Behavior": "AutoResetNotSaved"
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DescVariable",
+          "Name": "GlobalTrigEn",
+          "Type": "Bool",
+          "Default": false,
+          "Min": 0,
+          "Max": 1,
+          "BitSize": 1,
+          "MemoryLayout": {
+            "Index": 7
+          }
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DescVariable",
+          "Name": "AsicEventEn",
+          "Type": "Bool",
+          "Default": false,
+          "Min": 0,
+          "Max": 1,
+          "BitSize": 1,
+          "MemoryLayout": {
+            "Index": 8
+          }
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DescVariable",
+          "Name": "HvOn",
+          "Type": "Bool",
+          "Default": false,
+          "Min": 0,
+          "Max": 1,
+          "BitSize": 1,
+          "MemoryLayout": {
+            "Index": 9
+          }
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DescVariable",
+          "Name": "ReadoutEn",
+          "Type": "Bool",
+          "Default": false,
+          "Min": 0,
+          "Max": 1,
+          "BitSize": 1,
+          "MemoryLayout": {
+            "Index": 10
+          }
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DescVariable",
+          "Name": "InternalGenEn",
+          "Type": "Bool",
+          "Default": false,
+          "Min": 0,
+          "Max": 1,
+          "BitSize": 1,
+          "MemoryLayout": {
+            "Index": 11
+          }
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DescVariable",
+          "Name": "FifoDataClear",
+          "Type": "Bool",
+          "Default": true,
+          "Min": 0,
+          "Max": 1,
+          "BitSize": 1,
+          "MemoryLayout": {
+            "Index": 15
+          }
+        }
+      ]
+    },
+    "DataReadoutParameters": {
+      "Parameters": [
+        {
+          "$type": "UnigeFrontEnd.Config.DescVariable",
+          "Name": "GlobalTrigEn",
+          "Type": "Bool",
+          "Default": false,
+          "Min": 0,
+          "Max": 1,
+          "BitSize": 1,
+          "MemoryLayout": {
+            "Index": 7
+          }
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DescVariable",
+          "Name": "AsicEventEn",
+          "Type": "Bool",
+          "Default": false,
+          "Min": 0,
+          "Max": 1,
+          "BitSize": 1,
+          "MemoryLayout": {
+            "Index": 8
+          }
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DescVariable",
+          "Name": "ReadoutEn",
+          "Type": "Bool",
+          "Default": false,
+          "Min": 0,
+          "Max": 1,
+          "BitSize": 1,
+          "MemoryLayout": {
+            "Index": 10
+          }
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DescVariable",
+          "Name": "InternalGenEn",
+          "Type": "Bool",
+          "Default": false,
+          "Min": 0,
+          "Max": 1,
+          "BitSize": 1,
+          "MemoryLayout": {
+            "Index": 11
+          }
+        }
+      ]
+    },
+    "StatusParameters": {
+      "Parameters": [
+        {
+          "$type": "UnigeFrontEnd.Config.DescVariable",
+          "Name": "GlobalTrigEn",
+          "Type": "Bool",
+          "Default": false,
+          "Min": 0,
+          "Max": 1,
+          "BitSize": 1,
+          "MemoryLayout": {
+            "Index": 0
+          },
+          "Behavior": "NotSaved",
+          "Gui": {
+            "Graphical": "Disabled"
+          }
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DescVariable",
+          "Name": "AsicEventEn",
+          "Type": "Bool",
+          "Default": false,
+          "Min": 0,
+          "Max": 1,
+          "BitSize": 1,
+          "MemoryLayout": {
+            "Index": 1
+          },
+          "Behavior": "NotSaved",
+          "Gui": {
+            "Graphical": "Disabled"
+          }
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DescVariable",
+          "Name": "L0FifoErr",
+          "Type": "Bool",
+          "Default": false,
+          "Min": 0,
+          "Max": 1,
+          "BitSize": 1,
+          "MemoryLayout": {
+            "Index": 2
+          },
+          "Behavior": "NotSaved",
+          "Gui": {
+            "Graphical": "Disabled"
+          }
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DescVariable",
+          "Name": "L1FifoErr",
+          "Type": "Bool",
+          "Default": false,
+          "Min": 0,
+          "Max": 1,
+          "BitSize": 1,
+          "MemoryLayout": {
+            "Index": 3
+          },
+          "Behavior": "NotSaved",
+          "Gui": {
+            "Graphical": "Disabled"
+          }
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DescVariable",
+          "Name": "L2FifoErr",
+          "Type": "Bool",
+          "Default": false,
+          "Min": 0,
+          "Max": 1,
+          "BitSize": 1,
+          "MemoryLayout": {
+            "Index": 4
+          },
+          "Behavior": "NotSaved",
+          "Gui": {
+            "Graphical": "Disabled"
+          }
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DescVariable",
+          "Name": "DoutMuxErr",
+          "Type": "Bool",
+          "Default": false,
+          "Min": 0,
+          "Max": 1,
+          "BitSize": 1,
+          "MemoryLayout": {
+            "Index": 5
+          },
+          "Behavior": "NotSaved",
+          "Gui": {
+            "Graphical": "Disabled"
+          }
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DescVariable",
+          "Name": "L1AdcErr",
+          "Type": "Bool",
+          "Default": false,
+          "Min": 0,
+          "Max": 1,
+          "BitSize": 1,
+          "MemoryLayout": {
+            "Index": 6
+          },
+          "Behavior": "NotSaved",
+          "Gui": {
+            "Graphical": "Disabled"
+          }
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DescVariable",
+          "Name": "ValidWordAsic0",
+          "Type": "Bool",
+          "Default": false,
+          "Min": 0,
+          "Max": 1,
+          "BitSize": 1,
+          "MemoryLayout": {
+            "Index": 7
+          },
+          "Behavior": "NotSaved",
+          "Gui": {
+            "Graphical": "Disabled"
+          }
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DescVariable",
+          "Name": "ValidWordAsic1",
+          "Type": "Bool",
+          "Default": false,
+          "Min": 0,
+          "Max": 1,
+          "BitSize": 1,
+          "MemoryLayout": {
+            "Index": 8
+          },
+          "Behavior": "NotSaved",
+          "Gui": {
+            "Graphical": "Disabled"
+          }
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DescVariable",
+          "Name": "ValidWordAsic2",
+          "Type": "Bool",
+          "Default": false,
+          "Min": 0,
+          "Max": 1,
+          "BitSize": 1,
+          "MemoryLayout": {
+            "Index": 9
+          },
+          "Behavior": "NotSaved",
+          "Gui": {
+            "Graphical": "Disabled"
+          }
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DescVariable",
+          "Name": "ValidWordFPGA",
+          "Type": "Bool",
+          "Default": false,
+          "Min": 0,
+          "Max": 1,
+          "BitSize": 1,
+          "MemoryLayout": {
+            "Index": 10
+          },
+          "Behavior": "NotSaved",
+          "Gui": {
+            "Graphical": "Disabled"
+          }
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DescVariable",
+          "Name": "HvOn",
+          "Type": "Bool",
+          "Default": false,
+          "Min": 0,
+          "Max": 1,
+          "BitSize": 1,
+          "MemoryLayout": {
+            "Index": 11
+          },
+          "Behavior": "NotSaved",
+          "Gui": {
+            "Graphical": "Disabled"
+          }
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DescVariable",
+          "Name": "InternalGenEn",
+          "Type": "Bool",
+          "Default": false,
+          "Min": 0,
+          "Max": 1,
+          "BitSize": 1,
+          "MemoryLayout": {
+            "Index": 12
+          },
+          "Behavior": "NotSaved",
+          "Gui": {
+            "Graphical": "Disabled"
+          }
+        }
+      ]
+    }
+  },
+  "Children": [
+    {
+      "$type": "UnigeFrontEnd.Config.DescArray",
+      "Name": "ASICS",
+      "Mode": "ReadWrite",
+      "Children": [
+        {
+          "$type": "UnigeFrontEnd.Config.DescArray",
+          "Name": "ASIC",
+          "Mode": "ReadWrite",
+          "NumInstances": 3,
+          "MemoryLayout": {
+            "DeviceIndexes": [
+              {
+                "Index": 0,
+                "ArgLength": 72
+              },
+              {
+                "Index": 1,
+                "ArgLength": 72
+              },
+              {
+                "Index": 2,
+                "ArgLength": 72
+              }
+            ],
+            "MsbFirst": true
+          },
+          "Gui": {
+            "IsRoot": true
+          },
+          "Children": [
+            {
+              "$type": "UnigeFrontEnd.Config.DescArray",
+              "Name": "Channels",
+              "Mode": "ReadWrite",
+              "Children": [
+                {
+                  "$type": "UnigeFrontEnd.Config.DescArray",
+                  "Name": "Channel",
+                  "Mode": "ReadWrite",
+                  "NumInstances": 32,
+                  "MemoryLayout": {
+                    "GroupedByChild": true
+                  },
+                  "Gui": {
+                    "SelfNumColumns": 32
+                  },
+                  "Children": [
+                    {
+                      "$type": "UnigeFrontEnd.Config.DescVariable",
+                      "Name": "DAC4bTrigger_t",
+                      "Type": "Byte",
+                      "Default": 15,
+                      "Min": 0,
+                      "Max": 15,
+                      "BitSize": 4,
+                      "MemoryLayout": {
+                        "Index": 0
+                      }
+                    },
+                    {
+                      "$type": "UnigeFrontEnd.Config.DescVariable",
+                      "Name": "DAC4bTrigger",
+                      "Type": "Byte",
+                      "Default": 15,
+                      "Min": 0,
+                      "Max": 15,
+                      "BitSize": 4,
+                      "MemoryLayout": {
+                        "Index": 128
+                      }
+                    },
+                    {
+                      "$type": "UnigeFrontEnd.Config.DescVariable",
+                      "Name": "inputDAC",
+                      "Type": "Byte",
+                      "Default": 0,
+                      "Min": 0,
+                      "Max": 255,
+                      "BitSize": 8,
+                      "MemoryLayout": {
+                        "Index": 331,
+                        "Increment": 9,
+                        "MsbFirst": true
+                      }
+                    },
+                    {
+                      "$type": "UnigeFrontEnd.Config.DescVariable",
+                      "Name": "inputDAC_En",
+                      "Type": "Bool",
+                      "Default": true,
+                      "Min": 0,
+                      "Max": 1,
+                      "BitSize": 1,
+                      "MemoryLayout": {
+                        "Index": 339,
+                        "Increment": 9
+                      }
+                    },
+                    {
+                      "$type": "UnigeFrontEnd.Config.DescVariable",
+                      "Name": "HG_Gain",
+                      "Type": "Byte",
+                      "Default": 0,
+                      "Min": 0,
+                      "Max": 63,
+                      "BitSize": 6,
+                      "MemoryLayout": {
+                        "Index": 619,
+                        "Increment": 15,
+                        "MsbFirst": true
+                      }
+                    },
+                    {
+                      "$type": "UnigeFrontEnd.Config.DescVariable",
+                      "Name": "HG_CTest",
+                      "Type": "Bool",
+                      "Default": false,
+                      "Min": 0,
+                      "Max": 1,
+                      "BitSize": 1,
+                      "MemoryLayout": {
+                        "Index": 631,
+                        "Increment": 15
+                      }
+                    },
+                    {
+                      "$type": "UnigeFrontEnd.Config.DescVariable",
+                      "Name": "LG_Gain",
+                      "Type": "Byte",
+                      "Default": 0,
+                      "Min": 0,
+                      "Max": 63,
+                      "BitSize": 6,
+                      "MemoryLayout": {
+                        "Index": 625,
+                        "Increment": 15,
+                        "MsbFirst": true
+                      }
+                    },
+                    {
+                      "$type": "UnigeFrontEnd.Config.DescVariable",
+                      "Name": "LG_CTest",
+                      "Type": "Bool",
+                      "Default": false,
+                      "Min": 0,
+                      "Max": 1,
+                      "BitSize": 1,
+                      "MemoryLayout": {
+                        "Index": 632,
+                        "Increment": 15
+                      }
+                    },
+                    {
+                      "$type": "UnigeFrontEnd.Config.DescVariable",
+                      "Name": "PA_DIS",
+                      "Type": "Bool",
+                      "Default": false,
+                      "Min": 0,
+                      "Max": 1,
+                      "BitSize": 1,
+                      "MemoryLayout": {
+                        "Index": 633,
+                        "Increment": 15
+                      }
+                    },
+                    {
+                      "$type": "UnigeFrontEnd.Config.DescVariable",
+                      "Name": "DiscriMask",
+                      "Type": "Bool",
+                      "Default": false,
+                      "Min": 0,
+                      "Max": 1,
+                      "BitSize": 1,
+                      "MemoryLayout": {
+                        "Index": 265
+                      },
+                      "BitActiveLow": true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescArray",
+              "Name": "PowerModes",
+              "Mode": "ReadWrite",
+              "Gui": {
+                "ChildrenNumColumns": 4
+              },
+              "Versioning": [
+                {
+                  "Version": "1.1",
+                  "PreviousName": "Power_Modes"
+                }
+              ],
+              "Children": [
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "FastShaperEn",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 311
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "FastShaperDisPP",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 312
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "FastShaperFollowerDisPP",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 310
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "DiscriEn",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 256
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "DiscriDisPP",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 257
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "Discri_tEn",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 259
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "Discri_tDisPP",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 260
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "DAC4bEn",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 261
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "DAC4bDisPP",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 262
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "DAC4b_tEn",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 263
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "DAC4b_tDisPP",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 264
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "TempEn",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 1100
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "TempDisPP",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 1099
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "BandGapEn",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 1102
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "BandGapDisPP",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 1101
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "DAC10bEn",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 1103
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "DAC10bDisPP",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 1104
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "DAC10b_tEn",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 1105
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "DAC10b_tDisPP",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 1106
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "ProbeOTAqEn",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 1131
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "ProbeOTAqDisPP",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 1132
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "ValEvtRxEn",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 1134
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "ValEvtRxDisPP",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 1135
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "RazChnRxEn",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 1136
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "RazChnRxDisPP",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 1137
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "HG_T_H_En",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 298
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "HG_T_H_DisPP",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 297
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "HG_PdetEn",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 303
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "HG_PdetDisPP",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 302
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "HG_SlowShaperEn",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 319
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "HG_SlowShaperDisPP",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 318
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "HG_PA_En",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 327
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "HG_PA_DisPP",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 326
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "HG_OTAqEn",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 1127
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "HG_OTAqDisPP",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 1128
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "LG_TH_En",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 300
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "LG_TH_DisPP",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 299
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "LG_PdetEn",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 305
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "LG_PdetDisPP",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 304
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "LG_SlowShaperEn",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 314
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "LG_SlowShaperDisPP",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 313
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "LG_PA_En",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 325
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "LG_PA_DisPP",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 324
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "LG_OTAqEn",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 1129
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "LG_OTAqDisPP",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 1130
+                  },
+                  "Gui": {
+                    "Graphical": "Invisible"
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescArray",
+              "Name": "GlobalControl",
+              "Mode": "ReadWrite",
+              "Gui": {
+                "ChildrenNumColumns": 4
+              },
+              "Versioning": [
+                {
+                  "Version": "1.1",
+                  "PreviousName": "Global_Control"
+                }
+              ],
+              "Children": [
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "HG_SCAorPeakD",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 306
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "HG_SH_TimeConstant",
+                  "Type": "Byte",
+                  "Default": 7,
+                  "Min": 1,
+                  "Max": 7,
+                  "BitSize": 3,
+                  "MemoryLayout": {
+                    "Index": 320
+                  },
+                  "BitActiveLow": true
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "LG_SCAorPeakD",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 307
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "LG_SH_TimeConstant",
+                  "Type": "Byte",
+                  "Default": 7,
+                  "Min": 1,
+                  "Max": 7,
+                  "BitSize": 3,
+                  "MemoryLayout": {
+                    "Index": 315
+                  },
+                  "BitActiveLow": true
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "LG_PA_WeakBias",
+                  "Type": "Bool",
+                  "Default": false,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 323
+                  },
+                  "Gui": {
+                    "Graphical": "Disabled"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "DAC10b",
+                  "Type": "UInt16",
+                  "Default": 1023,
+                  "Min": 0,
+                  "Max": 1023,
+                  "BitSize": 10,
+                  "MemoryLayout": {
+                    "Index": 1107,
+                    "MsbFirst": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "DAC10b_t",
+                  "Type": "UInt16",
+                  "Default": 1023,
+                  "Min": 0,
+                  "Max": 1023,
+                  "BitSize": 10,
+                  "MemoryLayout": {
+                    "Index": 1117,
+                    "MsbFirst": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "TriggerPolarity",
+                  "Type": "Bool",
+                  "Default": false,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 1141
+                  },
+                  "Gui": {
+                    "Graphical": "Disabled"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "En32Trigger",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 1143
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "EnHitMuxOut",
+                  "Type": "Bool",
+                  "Default": false,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 1138
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "EnOR32",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 1139
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "EnNOR32",
+                  "Type": "Bool",
+                  "Default": false,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 1140
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "EnNOR32_t",
+                  "Type": "Bool",
+                  "Default": false,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 1142
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "InputDAC_4V5ref",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 330
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "InputDAC_En",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 329
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "FastShaperOnLG",
+                  "Type": "Bool",
+                  "Default": false,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 328
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "RSorDiscri",
+                  "Type": "Bool",
+                  "Default": false,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 258
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "SCAweakBias",
+                  "Type": "Bool",
+                  "Default": false,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 301
+                  },
+                  "Gui": {
+                    "Graphical": "Disabled"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "PeakSensingBypass",
+                  "Type": "Bool",
+                  "Default": false,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 308
+                  },
+                  "Gui": {
+                    "Graphical": "Disabled"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "SelTrigExtPSC",
+                  "Type": "Bool",
+                  "Default": false,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 309
+                  },
+                  "Gui": {
+                    "Graphical": "Disabled"
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "TestbOTAq",
+                  "Type": "Bool",
+                  "Default": false,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 1133
+                  },
+                  "Gui": {
+                    "Graphical": "Disabled"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$type": "UnigeFrontEnd.Config.DescArray",
+      "Name": "FPGA",
+      "Mode": "ReadWrite",
+      "MemoryLayout": {
+        "DeviceIndexes": [
+          {
+            "Index": 3,
+            "ArgLength": 72
+          }
+        ]
+      },
+      "Gui": {
+        "IsRoot": true
+      },
+      "Children": [
+        {
+          "$type": "UnigeFrontEnd.Config.DescArray",
+          "Name": "ASIC",
+          "Mode": "ReadWrite",
+          "NumInstances": 3,
+          "Children": [
+            {
+              "$type": "UnigeFrontEnd.Config.DescArray",
+              "Name": "Channels",
+              "Mode": "ReadWrite",
+              "Children": [
+                {
+                  "$type": "UnigeFrontEnd.Config.DescArray",
+                  "Name": "Channel",
+                  "Mode": "ReadWrite",
+                  "NumInstances": 32,
+                  "MemoryLayout": {
+                    "GroupedByChild": true
+                  },
+                  "Gui": {
+                    "SelfNumColumns": 32
+                  },
+                  "Children": [
+                    {
+                      "$type": "UnigeFrontEnd.Config.DescVariable",
+                      "Name": "HitEn",
+                      "Type": "Bool",
+                      "Default": true,
+                      "Min": 0,
+                      "Max": 1,
+                      "BitSize": 1,
+                      "MemoryLayout": {
+                        "Index": 0
+                      }
+                    },
+                    {
+                      "$type": "UnigeFrontEnd.Config.DescVariable",
+                      "Name": "HG_En",
+                      "Type": "Bool",
+                      "Default": true,
+                      "Min": 0,
+                      "Max": 1,
+                      "BitSize": 1,
+                      "MemoryLayout": {
+                        "Index": 32
+                      }
+                    },
+                    {
+                      "$type": "UnigeFrontEnd.Config.DescVariable",
+                      "Name": "LG_En",
+                      "Type": "Bool",
+                      "Default": true,
+                      "Min": 0,
+                      "Max": 1,
+                      "BitSize": 1,
+                      "MemoryLayout": {
+                        "Index": 64
+                      }
+                    },
+                    {
+                      "$type": "UnigeFrontEnd.Config.DescVariable",
+                      "Name": "OR96tAdcEn",
+                      "Type": "Bool",
+                      "Default": true,
+                      "Min": 0,
+                      "Max": 1,
+                      "BitSize": 1,
+                      "MemoryLayout": {
+                        "Index": 458,
+                        "Absolute": true
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescArray",
+              "Name": "GlobalControl",
+              "Mode": "ReadWrite",
+              "Gui": {
+                "ChildrenNumColumns": 4
+              },
+              "Versioning": [
+                {
+                  "Version": "1.1",
+                  "PreviousName": "Global_Control"
+                }
+              ],
+              "Children": [
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "TempEn",
+                  "Type": "Bool",
+                  "Default": true,
+                  "Min": 0,
+                  "Max": 1,
+                  "BitSize": 1,
+                  "MemoryLayout": {
+                    "Index": 96
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "L1ThresholdHG",
+                  "Type": "UInt16",
+                  "Default": 4095,
+                  "Min": 0,
+                  "Max": 4095,
+                  "BitSize": 12,
+                  "MemoryLayout": {
+                    "AbsoluteIndexes": [
+                      325,
+                      554,
+                      578
+                    ]
+                  },
+                  "Versioning": [
+                    {
+                      "Version": "1.1",
+                      "PreviousName": "L1Threshold",
+                      "PreviousParent": "..\\..\\Global_Control"
+                    },
+                    {
+                      "Version": "1.2",
+                      "PreviousName": "L1ThresholdHG",
+                      "PreviousParent": "..\\..\\GlobalControl"
+                    }
+                  ]
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DescVariable",
+                  "Name": "L1ThresholdLG",
+                  "Type": "UInt16",
+                  "Default": 4095,
+                  "Min": 0,
+                  "Max": 4095,
+                  "BitSize": 12,
+                  "MemoryLayout": {
+                    "AbsoluteIndexes": [
+                      420,
+                      566,
+                      590
+                    ]
+                  },
+                  "Versioning": [
+                    {
+                      "Version": "1.1",
+                      "PreviousName": "L1Threshold",
+                      "PreviousParent": "..\\..\\Global_Control"
+                    },
+                    {
+                      "Version": "1.2",
+                      "PreviousName": "L1ThresholdLG",
+                      "PreviousParent": "..\\..\\GlobalControl"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DescArray",
+          "Name": "GlobalControl",
+          "Mode": "ReadWrite",
+          "Gui": {
+            "ChildrenNumColumns": 4
+          },
+          "Versioning": [
+            {
+              "Version": "1.1",
+              "PreviousName": "Global_Control"
+            }
+          ],
+          "Children": [
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "L0HitLimit",
+              "Type": "Bool",
+              "Default": true,
+              "Min": 0,
+              "Max": 1,
+              "BitSize": 1,
+              "MemoryLayout": {
+                "Index": 291
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "L0TrigPerCounterEn",
+              "Type": "Bool",
+              "Default": true,
+              "Min": 0,
+              "Max": 1,
+              "BitSize": 1,
+              "MemoryLayout": {
+                "Index": 292
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "L1HvEn",
+              "Type": "Bool",
+              "Default": true,
+              "Min": 0,
+              "Max": 1,
+              "BitSize": 1,
+              "MemoryLayout": {
+                "Index": 293
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "L1HaLimit",
+              "Type": "Bool",
+              "Default": true,
+              "Min": 0,
+              "Max": 1,
+              "BitSize": 1,
+              "MemoryLayout": {
+                "Index": 294
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "L1HoldHG_Delay",
+              "Type": "UInt16",
+              "Default": 65,
+              "Min": 1,
+              "Max": 8191,
+              "BitSize": 13,
+              "MemoryLayout": {
+                "Index": 432
+              },
+              "UnitName": "2.5ns"
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "L1HoldLG_Delay",
+              "Type": "UInt16",
+              "Default": 65,
+              "Min": 1,
+              "Max": 8191,
+              "BitSize": 13,
+              "MemoryLayout": {
+                "Index": 445
+              },
+              "UnitName": "2.5ns"
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "L1AdcDelay",
+              "Type": "UInt16",
+              "Default": 0,
+              "Min": 0,
+              "Max": 1023,
+              "BitSize": 10,
+              "MemoryLayout": {
+                "Index": 315
+              },
+              "UnitName": "10ns"
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "L1ThresholdMode",
+              "Type": "Enum",
+              "Default": "Static",
+              "Min": 0,
+              "Max": 0,
+              "BitSize": 2,
+              "MemoryLayout": {
+                "Index": 337
+              },
+              "EnumValues": {
+                "Static": 0,
+                "Dynamic": 1,
+                "Hit": 2
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "L1IthmFast",
+              "Type": "Bool",
+              "Default": true,
+              "Min": 0,
+              "Max": 1,
+              "BitSize": 1,
+              "MemoryLayout": {
+                "Index": 339
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "L1ExtSpill",
+              "Type": "Bool",
+              "Default": false,
+              "Min": 0,
+              "Max": 1,
+              "BitSize": 1,
+              "MemoryLayout": {
+                "Index": 340
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "L1TrigSync",
+              "Type": "Bool",
+              "Default": false,
+              "Min": 0,
+              "Max": 1,
+              "BitSize": 1,
+              "MemoryLayout": {
+                "Index": 341
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "L1OR96_Fast",
+              "Type": "Bool",
+              "Default": true,
+              "Min": 0,
+              "Max": 1,
+              "BitSize": 1,
+              "MemoryLayout": {
+                "Index": 342
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "L1AdcCalSync",
+              "Type": "Bool",
+              "Default": false,
+              "Min": 0,
+              "Max": 1,
+              "BitSize": 1,
+              "MemoryLayout": {
+                "Index": 343
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "L1AnalogLimit10",
+              "Type": "Bool",
+              "Default": true,
+              "Min": 0,
+              "Max": 1,
+              "BitSize": 1,
+              "MemoryLayout": {
+                "Index": 344
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "L1TriggerLimit10",
+              "Type": "Bool",
+              "Default": true,
+              "Min": 0,
+              "Max": 1,
+              "BitSize": 1,
+              "MemoryLayout": {
+                "Index": 345
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "ExtGlobalTrig",
+              "Type": "Bool",
+              "Default": true,
+              "Min": 0,
+              "Max": 1,
+              "BitSize": 1,
+              "MemoryLayout": {
+                "Index": 346
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "ExtTriggerDelay",
+              "Type": "Byte",
+              "Default": 0,
+              "Min": 0,
+              "Max": 63,
+              "BitSize": 6,
+              "MemoryLayout": {
+                "Index": 347
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "IntGenPeriod",
+              "Type": "UInt16",
+              "Default": 200,
+              "Min": 0,
+              "Max": 65535,
+              "BitSize": 16,
+              "MemoryLayout": {
+                "Index": 353
+              },
+              "UnitName": "5us"
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "L2DoutDelay",
+              "Type": "UInt16",
+              "Default": 0,
+              "Min": 0,
+              "Max": 65535,
+              "BitSize": 16,
+              "MemoryLayout": {
+                "Index": 369
+              },
+              "Gui": {
+                "Graphical": "Disabled"
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "L2RequestMode",
+              "Type": "Bool",
+              "Default": false,
+              "Min": 0,
+              "Max": 1,
+              "BitSize": 1,
+              "MemoryLayout": {
+                "Index": 385
+              },
+              "Gui": {
+                "Graphical": "Disabled"
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "L2TDMEn",
+              "Type": "Bool",
+              "Default": false,
+              "Min": 0,
+              "Max": 1,
+              "BitSize": 1,
+              "MemoryLayout": {
+                "Index": 386
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "L2ChainNextEn",
+              "Type": "Bool",
+              "Default": false,
+              "Min": 0,
+              "Max": 1,
+              "BitSize": 1,
+              "MemoryLayout": {
+                "Index": 387
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "HoldDis",
+              "Type": "Bool",
+              "Default": false,
+              "Min": 0,
+              "Max": 1,
+              "BitSize": 1,
+              "MemoryLayout": {
+                "Index": 388
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "ResetPaDis",
+              "Type": "Bool",
+              "Default": false,
+              "Min": 0,
+              "Max": 1,
+              "BitSize": 1,
+              "MemoryLayout": {
+                "Index": 389
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "ResetPscDis",
+              "Type": "Bool",
+              "Default": false,
+              "Min": 0,
+              "Max": 1,
+              "BitSize": 1,
+              "MemoryLayout": {
+                "Index": 390
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "RazChnDis",
+              "Type": "Bool",
+              "Default": false,
+              "Min": 0,
+              "Max": 1,
+              "BitSize": 1,
+              "MemoryLayout": {
+                "Index": 391
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "HoldOnRazChn",
+              "Type": "Bool",
+              "Default": false,
+              "Min": 0,
+              "Max": 1,
+              "BitSize": 1,
+              "MemoryLayout": {
+                "Index": 392
+              },
+              "Gui": {
+                "Graphical": "Disabled"
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "ComputeOutEn",
+              "Type": "Bool",
+              "Default": false,
+              "Min": 0,
+              "Max": 1,
+              "BitSize": 1,
+              "MemoryLayout": {
+                "Index": 393
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "BaselineReset",
+              "Type": "Bool",
+              "Default": false,
+              "Min": 0,
+              "Max": 1,
+              "BitSize": 1,
+              "MemoryLayout": {
+                "Index": 394
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "BaselineOutEn",
+              "Type": "Bool",
+              "Default": false,
+              "Min": 0,
+              "Max": 1,
+              "BitSize": 1,
+              "MemoryLayout": {
+                "Index": 395
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "CompareOutEn",
+              "Type": "Bool",
+              "Default": true,
+              "Min": 0,
+              "Max": 1,
+              "BitSize": 1,
+              "MemoryLayout": {
+                "Index": 396
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "HoldLow",
+              "Type": "Bool",
+              "Default": false,
+              "Min": 0,
+              "Max": 1,
+              "BitSize": 1,
+              "MemoryLayout": {
+                "Index": 397
+              },
+              "Gui": {
+                "Graphical": "Disabled"
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "AdcComputeEn",
+              "Type": "Bool",
+              "Default": true,
+              "Min": 0,
+              "Max": 1,
+              "BitSize": 1,
+              "MemoryLayout": {
+                "Index": 398
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "Or32tADC",
+              "Type": "Bool",
+              "Default": false,
+              "Min": 0,
+              "Max": 1,
+              "BitSize": 1,
+              "MemoryLayout": {
+                "Index": 417
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "IndivTriggerDelay",
+              "Type": "Byte",
+              "Default": 0,
+              "Min": 0,
+              "Max": 63,
+              "BitSize": 6,
+              "MemoryLayout": {
+                "Index": 399
+              },
+              "UnitName": "2.5ns"
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "TimeoutDivider",
+              "Type": "UInt16",
+              "Default": 1,
+              "Min": 1,
+              "Max": 4095,
+              "BitSize": 12,
+              "MemoryLayout": {
+                "Index": 405
+              },
+              "UnitName": "2ms"
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "ReadoutOnStartSignal",
+              "Type": "Bool",
+              "Default": false,
+              "Min": 0,
+              "Max": 1,
+              "BitSize": 1,
+              "MemoryLayout": {
+                "Index": 418
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "GtrigStartSignalorSpill",
+              "Type": "Bool",
+              "Default": false,
+              "Min": 0,
+              "Max": 1,
+              "BitSize": 1,
+              "MemoryLayout": {
+                "Index": 419
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "Reserved0",
+              "Type": "Byte",
+              "Default": 65,
+              "Min": 1,
+              "Max": 255,
+              "BitSize": 8,
+              "MemoryLayout": {
+                "Index": 295
+              },
+              "Gui": {
+                "Graphical": "Invisible"
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "Reserved1",
+              "Type": "Byte",
+              "Default": 65,
+              "Min": 1,
+              "Max": 255,
+              "BitSize": 8,
+              "MemoryLayout": {
+                "Index": 305
+              },
+              "Gui": {
+                "Graphical": "Invisible"
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "Debug0",
+              "Type": "Byte",
+              "Default": 0,
+              "Min": 0,
+              "Max": 3,
+              "BitSize": 2,
+              "MemoryLayout": {
+                "Index": 303
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DescVariable",
+              "Name": "Debug1",
+              "Type": "Byte",
+              "Default": 0,
+              "Min": 0,
+              "Max": 3,
+              "BitSize": 2,
+              "MemoryLayout": {
+                "Index": 313
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
