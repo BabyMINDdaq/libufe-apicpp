@@ -3,7 +3,7 @@
 #ifndef CONFIG_H
 #define CONFIG_H 1
 
-#define UFEAPI_DIR   "/home/yordan/Workspace/BabyMIND_FEB/libufe-apicpp"
+#define UFEAPI_DIR   "/home/yordan/Workspace/BabyMIND_FEB/libufecpp"
 
 /* #undef ROOT_FOUND */
 

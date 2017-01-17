@@ -56,42 +56,50 @@ int main (int argc, char **argv) {
 
   try {
     UFEConfigFrame c;
-    c.LoadConfigFrameFromJsonFile(config_descr_file);
+    c.loadConfigFrameFromJsonFile(config_descr_file);
 
     if (device_id_arg != 0 && asics_arg == 0 && fpga_arg == 0 && all_devices_arg == 0) {
       int device_id = arg_as_int(argv[device_id_arg]);
-      c.LoadUserConfigFromJsonFile(config_user_file, device_id);
-      c.SetConfigBuffer(device_id);
-      if (out_arg != 0) c.DumpBufferToFile(file);
-      else c.DumpBuffer();
+
+      c.loadUserConfigFromJsonFile(config_user_file, device_id);
+      c.setConfigBuffer(device_id);
+
+      if (out_arg != 0) c.dumpBufferToFile(file);
+      else c.dumpBuffer();
+
     } else if (device_id_arg == 0 && asics_arg == 0 && fpga_arg != 0 && all_devices_arg == 0) {
       int device_id = 3;
-      c.LoadUserConfigFromJsonFile(config_user_file, device_id);
-      c.SetConfigBuffer(device_id);
-      if (out_arg != 0) c.DumpBufferToFile(file);
-      else c.DumpBuffer();;
+
+      c.loadUserConfigFromJsonFile(config_user_file, device_id);
+      c.setConfigBuffer(device_id);
+
+      if (out_arg != 0) c.dumpBufferToFile(file);
+      else c.dumpBuffer();
+
     } else if (device_id_arg == 0 && asics_arg != 0 && fpga_arg == 0 && all_devices_arg == 0) {
       for (int xDev=0; xDev<3; ++xDev) {
-        c.LoadUserConfigFromJsonFile(config_user_file, xDev);
-        c.SetConfigBuffer(xDev);
-        if (out_arg != 0) c.DumpBufferToFile(file);
-        else c.DumpBuffer();
+        c.loadUserConfigFromJsonFile(config_user_file, xDev);
+        c.setConfigBuffer(xDev);
+
+        if (out_arg != 0) c.dumpBufferToFile(file);
+        else c.dumpBuffer();
       }
     } else if ( all_devices_arg != 0 ||
                (asics_arg != 0 && fpga_arg != 0 && all_devices_arg) ) {
       for (int xDev=0; xDev<4; ++xDev) {
-        c.LoadUserConfigFromJsonFile(config_user_file, xDev);
-        c.SetConfigBuffer(xDev);
-        if (out_arg != 0) c.DumpBufferToFile(file);
-        else c.DumpBuffer();
+        c.loadUserConfigFromJsonFile(config_user_file, xDev);
+        c.setConfigBuffer(xDev);
+
+        if (out_arg != 0) c.dumpBufferToFile(file);
+        else c.dumpBuffer();
       }
     } else {
       print_usage(argv[0]);
       return 1;
     }
   } catch (UFEError &e) {
-    cerr << e.GetDescription() << endl;
-    cerr << e.GetLocation() << endl;
+    cerr << e.getDescription() << endl;
+    cerr << e.getLocation() << endl;
     return 1;
   }
 

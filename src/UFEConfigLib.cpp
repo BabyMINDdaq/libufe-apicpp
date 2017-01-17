@@ -40,7 +40,15 @@ void Variable::operator << (const Json::Value &v_json) {
         }
 
         this->Default_ = EnumValues_[ v_json["Default"].asString() ];
-      }
+      } /* catch () {
+//         cout << v_json["EnumValues"] << endl;
+        for (auto const& e : v_json["EnumValues"].getMemberNames()) {
+          this->EnumValues_[e] = v_json["EnumValues"][e].asInt();
+        }
+
+        this->Default_ = EnumValues_[ v_json["Default"].asString() ];
+      }*/
+
       this->Value_ = this->Default_;
 
       SET_MEMBER_INT(this, v_json, Min, 1)
@@ -130,6 +138,7 @@ void Board::operator << (const Json::Value &b_json) {
                   "void Board::operator << (const Json::Value&)",
                   UFEError::FATAL);
 }
+
 
 Parameters& operator<<(Parameters &p, const Json::Value &p_json) {
 //   cout << p_json << endl;

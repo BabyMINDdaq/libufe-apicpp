@@ -10,7 +10,6 @@
 #include <list>
 #include <exception>
 
-
 class UFEError {
 
  public:
@@ -28,11 +27,12 @@ class UFEError {
   // except be declared virtual.
   virtual ~UFEError() {}
 
-  std::string GetDescription();
-  std::string GetLocation();
+  std::string getDescription();
+  std::string getLocation();
+  int getSeverity();
 
 private:
-  std::string SeverityToString();
+  std::string severityToString();
 
   std::string errorDescription_;
   std::string errorLocation_;

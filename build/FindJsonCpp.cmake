@@ -8,7 +8,7 @@
 
 MESSAGE(" Looking for jsoncpp ...")
 
-find_path( JSONCPP_INCLUDE_DIR NAMES json/json.h PATHS /usr/include/jsoncpp/)
+find_path( JSONCPP_INCLUDE_DIR NAMES jsoncpp/json/json.h)
 find_library( JSONCPP_LIBRARY NAMES jsoncpp)
 
 # MESSAGE(STATUS "JSONCPP_INCLUDE_DIR: ${JSONCPP_INCLUDE_DIR}")

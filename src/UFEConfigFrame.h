@@ -13,38 +13,40 @@ public:
 
   virtual ~UFEConfigFrame() {}
 
-  void LoadConfigFrameFromJsonFile(std::string file);
-  void LoadUserConfigFromJsonFile(std::string file, int dev);
-  void LoadDirectParamFromJsonFile(std::string file, uint16_t &par);
-  void LoadReadoutParamFromJsonFile(std::string file, uint16_t &par);
-  void LoadJsonFile(std::string file, Json::Value &json_doc);
+  static void loadJsonFile(std::string file, Json::Value &json_doc);
 
-  void LoadConfigFrame(const Json::Value &c);
-  void LoadUserConfig(const Json::Value &c, unsigned int dev);
-  void LoadDirectParam(const Json::Value &c, uint16_t &par);
-  void LoadReadoutParam(const Json::Value &c, uint16_t &par);
-  int  GetSortedList(std::vector<Variable> &index, unsigned int dev);
-  void SetConfigBuffer(unsigned int dev);
-  void ResetBuffer() { Buffer_.Reset(); }
-  void DumpBuffer();
-  void DumpBufferToFile(std::ofstream &file);
-  void PrintBuffer();
+  void loadConfigFrameFromJsonFile(std::string file);
+  void loadUserConfigFromJsonFile(std::string file, int dev);
+  void loadDirectParamFromJsonFile(std::string file, uint16_t &par);
+  void loadReadoutParamFromJsonFile(std::string file, uint16_t &par);
+
+  void loadConfigFrame(const Json::Value &c);
+  void loadUserConfig(const Json::Value &c, unsigned int dev);
+  void loadDirectParam(const Json::Value &c, uint16_t &par);
+  void loadReadoutParam(const Json::Value &c, uint16_t &par);
+  int  getSortedList(std::vector<Variable> &index, unsigned int dev);
+  void setConfigBuffer(unsigned int dev);
+  uint32_t*    getConfigData()     const {return Buffer_.getData();}
+  unsigned int getConfigDataSize() const {return Buffer_.getSize();}
+  void resetBuffer()              { Buffer_.reset(); }
+  void dumpBuffer();
+  void dumpBufferToFile(std::ofstream &file);
+  void printBuffer();
 
 private:
+  void getBoardConfig(const Json::Value &c);
 
-  void GetBoardConfig(const Json::Value &c);
+  void getAsicConfig(const Json::Value &c);
+  void getAsicChannelsConfig(const Json::Value &c);
+  void getAsicGlobalControlConfig( const Json::Value &conf);
+  void getAsicPowerModesConfig( const Json::Value &conf);
 
-  void GetAsicConfig(const Json::Value &c);
-  void GetAsicChannelsConfig(const Json::Value &c);
-  void GetAsicGlobalControlConfig( const Json::Value &conf);
-  void GetAsicPowerModesConfig( const Json::Value &conf);
+  void getFpgaConfig(const Json::Value &c);
+  void getFpgaAsicConfig(const Json::Value &c);
+  void getFpgaGlobalControl(const Json::Value &c);
 
-  void GetFpgaConfig(const Json::Value &c);
-  void GetFpgaAsicConfig(const Json::Value &c);
-  void GetFpgaGlobalControl(const Json::Value &c);
-
-  void GetAsicUserConfig(Json::Value u);
-  void GetFpfaUserConfig(Json::Value u);
+  void getAsicUserConfig(Json::Value u);
+  void getFpfaUserConfig(Json::Value u);
 
   std::string Name_;
   double Version_;
@@ -59,7 +61,7 @@ private:
   FPGA Fpga_;
   UFEConfigBuffer Buffer_;
 
-  struct myclass {
+  struct VarSorter {
     bool operator() (Variable i, Variable j) {
       return (i.MemoryLayout_.Index_ < j.MemoryLayout_.Index_);
     }

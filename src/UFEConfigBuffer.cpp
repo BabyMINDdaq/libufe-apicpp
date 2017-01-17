@@ -11,10 +11,10 @@ using namespace std;
 
 UFEConfigBuffer::UFEConfigBuffer()
 : actual_size_(0), buffer_(new uint32_t[size_]) {
-  this->Reset();
+  this->reset();
 }
 
-void UFEConfigBuffer::LoadConfigFromTextFile(std::string file) {
+void UFEConfigBuffer::loadConfigFromTextFile(std::string file) {
     uint32_t *data_32 = buffer_;
 
     string line;
@@ -33,14 +33,14 @@ void UFEConfigBuffer::LoadConfigFromTextFile(std::string file) {
       cout << "**  Error: cannot open file " << file << endl;
 }
 
-void UFEConfigBuffer::SetBitField(unsigned int index, unsigned int size, unsigned int value) {
+void UFEConfigBuffer::setBitField(unsigned int index, unsigned int size, unsigned int value) {
 
   unsigned int max = (1 << size) - 1;
   if (value > max) {
     stringstream ss;
     ss << "Value exceeds the size limitation (" << value << ">" << max << ")";
     throw UFEError( ss.str(),
-                    "UFEConfigBuffer::SetBitField(int, int, int)" ,
+                    "UFEConfigBuffer::setBitField(int, int, int)" ,
                     UFEError::FATAL);
   }
 
@@ -48,7 +48,7 @@ void UFEConfigBuffer::SetBitField(unsigned int index, unsigned int size, unsigne
     stringstream ss;
     ss << "Value exceeds the size of the buffer (" << value << ">" << max << ")";
     throw UFEError( ss.str(),
-                    "UFEConfigBuffer::SetBitField(int, int, int)" ,
+                    "UFEConfigBuffer::setBitField(int, int, int)" ,
                     UFEError::FATAL);
   }
 
@@ -72,7 +72,7 @@ void UFEConfigBuffer::SetBitField(unsigned int index, unsigned int size, unsigne
   }
 }
 
-void UFEConfigBuffer::SetBitField(Variable var, char mode) {
+void UFEConfigBuffer::setBitField(Variable var, char mode) {
 int index;
   if (mode == 'n')
     index = var.MemoryLayout_.Index_;
@@ -82,7 +82,7 @@ int index;
     stringstream ss;
     ss << "Unexpected mode " << mode << ".";
     throw UFEError( ss.str(),
-                    "void UFEConfigBuffer::SetBitField(Variable, char)" ,
+                    "void UFEConfigBuffer::setBitField(Variable, char)" ,
                     UFEError::FATAL);
   }
 
@@ -93,18 +93,18 @@ int index;
 
   if ( (var.MemoryLayout_.MsbFirst_ && mode == 'n') ||
        (!var.MemoryLayout_.MsbFirst_ && mode == 'r') ) {
-    xValue = this->Reverse(xValue, var.BitSize_);
+    xValue = this->reverse(xValue, var.BitSize_);
   }
 
-  this->SetBitField(index, var.BitSize_, xValue);
+  this->setBitField(index, var.BitSize_, xValue);
 }
 
-void UFEConfigBuffer::Reset() {
+void UFEConfigBuffer::reset() {
   for (unsigned int i=0; i<size_; ++i)
     buffer_[i] = 0;
 }
 
-void UFEConfigBuffer::Dump() {
+void UFEConfigBuffer::dump() {
   cout << hex;
   for (unsigned int i=0; i<size_; ++i)
     cout << "0x" << buffer_[i] << endl;
@@ -112,7 +112,7 @@ void UFEConfigBuffer::Dump() {
   cout << dec;
 }
 
-void UFEConfigBuffer::DumpToFile(ofstream &file) {
+void UFEConfigBuffer::dumpToFile(ofstream &file) {
   file << hex;
   for (unsigned int i=0; i<size_; ++i)
     file << "0x" << buffer_[i] << endl;
@@ -120,7 +120,18 @@ void UFEConfigBuffer::DumpToFile(ofstream &file) {
   file << dec;
 }
 
-void UFEConfigBuffer::Print() {
+void UFEConfigBuffer::loadFromFile(ifstream &file) {
+  for (unsigned int i=0; i<size_; ++i) {
+    file >> hex >> buffer_[i];
+    if (file.eof()) {
+      throw UFEError( "unexpected end of file.",
+                      "int UFEDevice::configFromBinary(string)",
+                      UFEError::SERIOUS);
+      }
+  }
+}
+
+void UFEConfigBuffer::print() {
   cout << hex;
   for (unsigned int i=0; i<size_; ++i) {
     cout << dec << i << "  " << std::bitset<32>(buffer_[i])
@@ -132,7 +143,7 @@ void UFEConfigBuffer::Print() {
   cout << dec;
 }
 
-uint16_t UFEConfigBuffer::SetParams(const Parameters &par) {
+uint16_t UFEConfigBuffer::setParams(const Parameters &par) {
   uint16_t buff(0);
   for (auto &p : par)
     buff |= (p.Value_& 0b1) << p.MemoryLayout_.Index_;
@@ -140,7 +151,7 @@ uint16_t UFEConfigBuffer::SetParams(const Parameters &par) {
   return buff;
 }
 
-uint32_t UFEConfigBuffer::Reverse(int val, size_t size) {
+uint32_t UFEConfigBuffer::reverse(int val, size_t size) {
   uint32_t reversed = 0;
   for (size_t i = 0; i < size; ++i) {
     reversed |= ((val>>i) & 1)<<(size-1-i);
@@ -149,14 +160,14 @@ uint32_t UFEConfigBuffer::Reverse(int val, size_t size) {
   return reversed;
 }
 
-void UFEConfigBuffer::Reverse(const size_t size) {
+void UFEConfigBuffer::reverse(const size_t size) {
   uint8_t *buff_tmp = new uint8_t[size];
   uint8_t *buff_8 = (uint8_t*)buffer_;
   memcpy(buff_tmp, buff_8, size);
 
-  this->Reset();
+  this->reset();
   for (unsigned int i=0; i<size; ++i)
-    buff_8[i] = Reverse(buff_tmp[size-1-i], 8);
+    buff_8[i] = reverse(buff_tmp[size-1-i], 8);
 
   delete[] buff_tmp;
 }

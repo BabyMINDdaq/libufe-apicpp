@@ -52,11 +52,11 @@ int main (int argc, char **argv) {
 
     UFEConfigFrame c;
     uint16_t par;
-    c.LoadConfigFrameFromJsonFile(config_descr_file);
+    c.loadConfigFrameFromJsonFile(config_descr_file);
     if (direct_arg)
-      c.LoadDirectParamFromJsonFile(config_user_file, par);
+      c.loadDirectParamFromJsonFile(config_user_file, par);
     else
-      c.LoadReadoutParamFromJsonFile(config_user_file, par);
+      c.loadReadoutParamFromJsonFile(config_user_file, par);
 
     if (out_arg != 0) {
       ofstream out_file(argv[out_arg]);
@@ -66,8 +66,8 @@ int main (int argc, char **argv) {
       cout << "0x" << hex << par << dec << endl;
 
   } catch (UFEError &e) {
-    cerr << e.GetDescription() << endl;
-    cerr << e.GetLocation() << endl;
+    cerr << e.getDescription() << endl;
+    cerr << e.getLocation() << endl;
     return 1;
   }
 

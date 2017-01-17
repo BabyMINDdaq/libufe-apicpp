@@ -9,41 +9,41 @@
 using namespace std;
 
 UFEConfigFrame::UFEConfigFrame(Json::Value c) {
-  LoadConfigFrame(c);
+  loadConfigFrame(c);
 }
 
-void UFEConfigFrame::LoadConfigFrameFromJsonFile(std::string file) {
+void UFEConfigFrame::loadConfigFrameFromJsonFile(std::string file) {
   Json::Value json_doc;
-  this->LoadJsonFile(file, json_doc);
-  this->LoadConfigFrame(json_doc);
+  this->loadJsonFile(file, json_doc);
+  this->loadConfigFrame(json_doc);
 }
 
-void UFEConfigFrame::LoadUserConfigFromJsonFile(std::string file, int dev) {
+void UFEConfigFrame::loadUserConfigFromJsonFile(std::string file, int dev) {
   Json::Value json_doc;
-  this->LoadJsonFile(file, json_doc);
-  this->LoadUserConfig(json_doc, dev);
+  this->loadJsonFile(file, json_doc);
+  this->loadUserConfig(json_doc, dev);
 }
 
-void UFEConfigFrame::LoadDirectParamFromJsonFile(std::string file, uint16_t &par) {
+void UFEConfigFrame::loadDirectParamFromJsonFile(std::string file, uint16_t &par) {
   Json::Value json_doc;
-  this->LoadJsonFile(file, json_doc);
-  this->LoadDirectParam(json_doc, par);
+  this->loadJsonFile(file, json_doc);
+  this->loadDirectParam(json_doc, par);
 }
 
-void UFEConfigFrame::LoadReadoutParamFromJsonFile(std::string file, uint16_t &par) {
+void UFEConfigFrame::loadReadoutParamFromJsonFile(std::string file, uint16_t &par) {
   Json::Value json_doc;
-  this->LoadJsonFile(file, json_doc);
-  this->LoadReadoutParam(json_doc, par);
+  this->loadJsonFile(file, json_doc);
+  this->loadReadoutParam(json_doc, par);
 }
 
-void UFEConfigFrame::LoadJsonFile(std::string file, Json::Value &json_doc) {
+void UFEConfigFrame::loadJsonFile(std::string file, Json::Value &json_doc) {
   stringstream buffer;
   ifstream config_file(file);
   if (!config_file) {
     stringstream ss;
     ss << "Can not open file " << file;
     throw UFEError( ss.str(),
-                    "void UFEConfigFrame::LoadJsonFile(std::string, Json::Value&)" ,
+                    "void UFEConfigFrame::loadJsonFile(std::string, Json::Value&)" ,
                     UFEError::FATAL);
   }
 
@@ -54,75 +54,70 @@ void UFEConfigFrame::LoadJsonFile(std::string file, Json::Value &json_doc) {
 
   if ( !parsingSuccessful ) {
     stringstream ss;
-    ss << "Failed to parse configuration description. ***\n***"
+    ss << "Failed to parse file " << file << ". ***\n***"
        << reader.getFormattedErrorMessages();
     throw UFEError( ss.str(),
-                    "void UFEConfigFrame::LoadJsonFile(std::string, Json::Value&)" ,
+                    "void UFEConfigFrame::loadJsonFile(std::string, Json::Value&)" ,
                     UFEError::FATAL);
   }
 }
 
-void UFEConfigFrame::LoadConfigFrame(const Json::Value &conf) {
-  try {
-    SET_MEMBER_STRING(this, conf, Name, 1)
-    SET_MEMBER_DOUBLE_ASSTRING(this, conf, Version, 1)
-    SET_MEMBER_DOUBLE_ASSTRING(this, conf, MinFpgaVersion, 1)
-    SET_MEMBER_INT(this, conf, DeviceMemorySize, 1)
+void UFEConfigFrame::loadConfigFrame(const Json::Value &conf) {
+  SET_MEMBER_STRING(this, conf, Name, 1)
+  SET_MEMBER_DOUBLE_ASSTRING(this, conf, Version, 1)
+  SET_MEMBER_DOUBLE_ASSTRING(this, conf, MinFpgaVersion, 1)
+  SET_MEMBER_INT(this, conf, DeviceMemorySize, 1)
 
-    if (conf.isMember("FirmwareVIds"))
-      for (auto const& xFV : conf["FirmwareVIds"]) {
-//         cout << xFV << endl;
-        FirmwareVId fv;
-        fv << xFV;
-        FirmwareVIds_.push_back(fv);
-      }
-
-    if (conf.isMember("HardwareVIds"))
-      for (auto const& xHV : conf["HardwareVIds"]) {
-//         cout << xFV << endl;
-        HardwareVId hv;
-        hv << xHV;
-        HardwareVIds_.push_back(hv);
-      }
-
-    if (conf.isMember("Board")) {
-      this->GetBoardConfig(conf["Board"]);
+  if (conf.isMember("FirmwareVIds"))
+    for (auto const& xFV : conf["FirmwareVIds"]) {
+//       cout << xFV << endl;
+      FirmwareVId fv;
+      fv << xFV;
+      FirmwareVIds_.push_back(fv);
     }
 
-    if (conf.isMember("Children")) {
-      for (auto const& device : conf["Children"]) {
-        if (device["Name"].asString() == "FPGA")
-          this->GetFpgaConfig(device["Children"]);
-        else if (device["Name"].asString() == "ASICS")
-          this->GetAsicConfig(device["Children"]);
-      }
+  if (conf.isMember("HardwareVIds"))
+    for (auto const& xHV : conf["HardwareVIds"]) {
+//       cout << xFV << endl;
+      HardwareVId hv;
+      hv << xHV;
+      HardwareVIds_.push_back(hv);
     }
-  } catch (UFEError &e) {
-    cerr << e.GetDescription() << endl;
-    cerr << e.GetLocation() << endl;
+
+  if (conf.isMember("Board")) {
+    this->getBoardConfig(conf["Board"]);
+  }
+
+  if (conf.isMember("Children")) {
+    for (auto const& device : conf["Children"]) {
+      if (device["Name"].asString() == "FPGA")
+        this->getFpgaConfig(device["Children"]);
+      else if (device["Name"].asString() == "ASICS")
+        this->getAsicConfig(device["Children"]);
+    }
   }
 }
 
-void UFEConfigFrame::GetFpgaConfig(const Json::Value &conf) {
+void UFEConfigFrame::getFpgaConfig(const Json::Value &conf) {
   if (conf.isArray())
     if (conf.size() == 2) {
       for (auto const & ch : conf) {
         if (ch["Name"] == "ASIC")
-          this->GetFpgaAsicConfig(ch);
+          this->getFpgaAsicConfig(ch);
 
         if (ch["Name"] == "GlobalControl")
-          this->GetFpgaGlobalControl(ch["Children"]);
+          this->getFpgaGlobalControl(ch["Children"]);
       }
 
       return;
   }
 
   throw UFEError( "Unexpected structure of the configuration description.",
-                  "UFEConfigFrame::GetFpgaConfig(const Json::Value&)" ,
+                  "UFEConfigFrame::getFpgaConfig(const Json::Value&)" ,
                   UFEError::FATAL);
 }
 
-void UFEConfigFrame::GetFpgaGlobalControl(const Json::Value &conf) {
+void UFEConfigFrame::getFpgaGlobalControl(const Json::Value &conf) {
   if (conf.isArray()) {
     for (auto const & gc_var : conf) {
 //       cout << gc_var << endl;
@@ -135,11 +130,11 @@ void UFEConfigFrame::GetFpgaGlobalControl(const Json::Value &conf) {
   }
 
   throw UFEError( "Unexpected structure of the configuration description.",
-                  "UFEConfigFrame::GetFpgaGlobalControl(const Json::Value&)" ,
+                  "UFEConfigFrame::getFpgaGlobalControl(const Json::Value&)" ,
                   UFEError::FATAL);
 }
 
-void UFEConfigFrame::GetFpgaAsicConfig(const Json::Value &conf) {
+void UFEConfigFrame::getFpgaAsicConfig(const Json::Value &conf) {
   if ( conf["Children"].isArray() && conf.isMember("NumInstances") ) {
     int nAsics = conf["NumInstances"].asInt();
     Fpga_.Asics_.resize(nAsics);
@@ -188,18 +183,18 @@ void UFEConfigFrame::GetFpgaAsicConfig(const Json::Value &conf) {
                   UFEError::FATAL);
 }
 
-void UFEConfigFrame::GetAsicConfig(const Json::Value &conf) {
+void UFEConfigFrame::getAsicConfig(const Json::Value &conf) {
   if (conf.isArray())
     if (conf.size() == 1)
       if (conf[0]["Name"].asString() == "ASIC") {
         if (conf[0]["Children"].isArray()) {
           for (auto const & ch : conf[0]["Children"]) {
             if (ch["Name"] == "Channels")
-              this->GetAsicChannelsConfig(ch["Children"]);
+              this->getAsicChannelsConfig(ch["Children"]);
             else if (ch["Name"] == "PowerModes")
-              this->GetAsicPowerModesConfig(ch["Children"]);
+              this->getAsicPowerModesConfig(ch["Children"]);
             else if (ch["Name"] == "GlobalControl" )
-              this->GetAsicGlobalControlConfig(ch["Children"]);
+              this->getAsicGlobalControlConfig(ch["Children"]);
             }
 
             return;
@@ -211,7 +206,7 @@ void UFEConfigFrame::GetAsicConfig(const Json::Value &conf) {
                   UFEError::FATAL);
 }
 
-void UFEConfigFrame::GetAsicGlobalControlConfig(const Json::Value &conf) {
+void UFEConfigFrame::getAsicGlobalControlConfig(const Json::Value &conf) {
   if (conf.isArray()) {
     for (auto const & gc_var : conf) {
 //       cout << gc_var << endl;
@@ -224,11 +219,11 @@ void UFEConfigFrame::GetAsicGlobalControlConfig(const Json::Value &conf) {
   }
 
   throw UFEError( "Unexpected structure of the configuration description.",
-                  "UFEConfigFrame::GetAsicGlobalControlConfig(const Json::Value&)" ,
+                  "UFEConfigFrame::getAsicGlobalControlConfig(const Json::Value&)" ,
                   UFEError::FATAL);
 }
 
-void UFEConfigFrame::GetAsicPowerModesConfig(const Json::Value &conf) {
+void UFEConfigFrame::getAsicPowerModesConfig(const Json::Value &conf) {
   if (conf.isArray()) {
     for (auto const & pm_var : conf) {
 //       cout << pm_var << endl;
@@ -241,11 +236,11 @@ void UFEConfigFrame::GetAsicPowerModesConfig(const Json::Value &conf) {
   }
 
   throw UFEError( "Unexpected structure of the configuration description.",
-                  "UFEConfigFrame::GetAsicPowerModesConfig(const Json::Value&)" ,
+                  "UFEConfigFrame::getAsicPowerModesConfig(const Json::Value&)" ,
                   UFEError::FATAL);
 }
 
-void UFEConfigFrame::GetAsicChannelsConfig(const Json::Value &conf) {
+void UFEConfigFrame::getAsicChannelsConfig(const Json::Value &conf) {
   if (conf.isArray())
     if (conf.size() == 1)
       if (conf[0]["Name"] == "Channel") {
@@ -273,11 +268,11 @@ void UFEConfigFrame::GetAsicChannelsConfig(const Json::Value &conf) {
       }
 
   throw UFEError( "Unexpected structure of the configuration description.",
-                  "UFEConfigFrame::GetAsicChannelsConfig(const Json::Value&)" ,
+                  "UFEConfigFrame::getAsicChannelsConfig(const Json::Value&)" ,
                   UFEError::FATAL);
 }
 
-void UFEConfigFrame::GetBoardConfig(const Json::Value &conf) {
+void UFEConfigFrame::getBoardConfig(const Json::Value &conf) {
   if (conf.isMember("DirectParameters"))
     if (conf["DirectParameters"].isMember("Parameters"))
       for (auto const& dp_var : conf["DirectParameters"]["Parameters"]) {
@@ -306,7 +301,7 @@ void UFEConfigFrame::GetBoardConfig(const Json::Value &conf) {
       }
 }
 
-void UFEConfigFrame::GetAsicUserConfig(Json::Value u) {
+void UFEConfigFrame::getAsicUserConfig(Json::Value u) {
 
   if (u.isMember("Children"))
   for (auto const& par : u["Children"]) {
@@ -325,13 +320,13 @@ void UFEConfigFrame::GetAsicUserConfig(Json::Value u) {
       this->Asic_.GlobalControlParameters_ << par;
     } else {
       throw UFEError( "Unexpected structure of the user configuration.",
-                      "void UFEConfigFrame::GetAsicUserConfig(Json::Value)" ,
+                      "void UFEConfigFrame::getAsicUserConfig(Json::Value)" ,
                       UFEError::FATAL);
     }
   }
 }
 
-void UFEConfigFrame::GetFpfaUserConfig(Json::Value u)  {
+void UFEConfigFrame::getFpfaUserConfig(Json::Value u)  {
   if (u.isArray())
   for (auto const& fpga : u) {
     if (fpga["Name"] == "GlobalControl")
@@ -393,12 +388,12 @@ void UFEConfigFrame::GetFpfaUserConfig(Json::Value u)  {
   }
 }
 
-void UFEConfigFrame::LoadUserConfig(const Json::Value &c, unsigned int dev) {
+void UFEConfigFrame::loadUserConfig(const Json::Value &c, unsigned int dev) {
   if (dev > 3) {
     stringstream ss;
     ss << "Devise " << dev << " does not exist.";
     throw UFEError( ss.str(),
-                    "void UFEConfigFrame::LoadUserConfig(Json::Value, unsigned int)" ,
+                    "void UFEConfigFrame::loadUserConfig(Json::Value, unsigned int)" ,
                     UFEError::FATAL);
   }
 
@@ -410,7 +405,7 @@ void UFEConfigFrame::LoadUserConfig(const Json::Value &c, unsigned int dev) {
           ss << "ASIC" << dev;
           for (auto const& a : u["Children"])
             if (a["Name"] == ss.str()) {
-              GetAsicUserConfig (a);
+              getAsicUserConfig(a);
               return;
             }
         }
@@ -419,18 +414,18 @@ void UFEConfigFrame::LoadUserConfig(const Json::Value &c, unsigned int dev) {
   } else if (dev == 3) {
     for (auto const& u : c["Children"]) {
       if (u["Name"] == "FPGA") {
-        GetFpfaUserConfig(u["Children"]);
+        getFpfaUserConfig(u["Children"]);
         return;
       }
     }
   }
 
   throw UFEError( "Unexpected structure of the user configuration.",
-                  "void UFEConfigFrame::LoadUserConfig(Json::Value, unsigned int)" ,
+                  "void UFEConfigFrame::loadUserConfig(Json::Value, unsigned int)" ,
                   UFEError::FATAL);
 }
 
-void UFEConfigFrame::LoadDirectParam(const Json::Value &c, uint16_t &par) {
+void UFEConfigFrame::loadDirectParam(const Json::Value &c, uint16_t &par) {
   for (auto const& b : c["Children"])
     if (b["Name"] == "Board")
       for (auto const& dp : b["Children"])
@@ -438,16 +433,16 @@ void UFEConfigFrame::LoadDirectParam(const Json::Value &c, uint16_t &par) {
 //           cout << dp << endl;
           this->Board_.DirectParameters_ << dp;
 //           cout << this->Board_.DirectParameters_ << endl;
-          par = this->Buffer_.SetParams(this->Board_.DirectParameters_);
+          par = this->Buffer_.setParams(this->Board_.DirectParameters_);
           return;
         }
 
   throw UFEError( "Unexpected structure of the user configuration.",
-                  "void UFEConfigFrame::LoadDirectParam(const Json::Value&, uint16_t&)" ,
+                  "void UFEConfigFrame::loadDirectParam(const Json::Value&, uint16_t&)" ,
                   UFEError::FATAL);
 }
 
-void UFEConfigFrame::LoadReadoutParam(const Json::Value &c, uint16_t &par) {
+void UFEConfigFrame::loadReadoutParam(const Json::Value &c, uint16_t &par) {
   for (auto const& b : c["Children"])
     if (b["Name"] == "Board")
       for (auto const& rp : b["Children"])
@@ -455,36 +450,36 @@ void UFEConfigFrame::LoadReadoutParam(const Json::Value &c, uint16_t &par) {
 //           cout << rp << endl;
           this->Board_.DataReadoutParameters_ << rp;
 //           cout << this->Board_.DataReadoutParameters_ << endl;
-          par = this->Buffer_.SetParams(this->Board_.DataReadoutParameters_);
+          par = this->Buffer_.setParams(this->Board_.DataReadoutParameters_);
           return;
         }
 
   throw UFEError( "Unexpected structure of the user configuration.",
-                  "void UFEConfigFrame::LoadReadoutParam(const Json::Value&, uint16_t&)" ,
+                  "void UFEConfigFrame::loadReadoutParam(const Json::Value&, uint16_t&)" ,
                   UFEError::FATAL);
 }
 
-void UFEConfigFrame::SetConfigBuffer(unsigned int dev) {
+void UFEConfigFrame::setConfigBuffer(unsigned int dev) {
   vector<Variable> index;
-  this->GetSortedList(index, dev);
-  Buffer_.Reset();
-  Buffer_.SetActualSize(index.back().MemoryLayout_.Index_ + index.back().BitSize_);
+  this->getSortedList(index, dev);
+  Buffer_.reset();
+  Buffer_.setActualSize(index.back().MemoryLayout_.Index_ + index.back().BitSize_);
   if (dev < 3) {
     for (auto & v:index)
-      Buffer_.SetBitField(v, 'r');
+      Buffer_.setBitField(v, 'r');
   } else if ( dev == 3) {
     for (auto & v:index)
-      Buffer_.SetBitField(v, 'n');
+      Buffer_.setBitField(v, 'n');
   } else {
     stringstream ss;
     ss << "Devise " << dev << " does not exist.";
     throw UFEError( ss.str(),
-                    "void UFEConfigFrame::LoadUserConfig(Json::Value, unsigned int)" ,
+                    "void UFEConfigFrame::loadUserConfig(Json::Value, unsigned int)" ,
                     UFEError::FATAL);
   }
 }
 
-int UFEConfigFrame::GetSortedList(vector<Variable> &index, unsigned int dev) {
+int UFEConfigFrame::getSortedList(vector<Variable> &index, unsigned int dev) {
   if (dev < 3) {
     for (auto const & ch : this->Asic_.Channels_)
       for (auto const & var : ch.ChannelParameters_)
@@ -513,7 +508,7 @@ int UFEConfigFrame::GetSortedList(vector<Variable> &index, unsigned int dev) {
     stringstream ss;
     ss << "Devise " << dev << " does not exist.";
     throw UFEError( ss.str(),
-                    "void UFEConfigFrame::LoadUserConfig(Json::Value, unsigned int)" ,
+                    "void UFEConfigFrame::loadUserConfig(Json::Value, unsigned int)" ,
                     UFEError::FATAL);
   }
 
@@ -521,15 +516,15 @@ int UFEConfigFrame::GetSortedList(vector<Variable> &index, unsigned int dev) {
   return index.size();
 }
 
-void UFEConfigFrame::DumpBuffer() {
-  Buffer_.Dump();
+void UFEConfigFrame::dumpBuffer() {
+  Buffer_.dump();
 }
 
-void UFEConfigFrame::DumpBufferToFile(ofstream &file) {
-  Buffer_.DumpToFile(file);
+void UFEConfigFrame::dumpBufferToFile(ofstream &file) {
+  Buffer_.dumpToFile(file);
 }
 
-void UFEConfigFrame::PrintBuffer() {
-  Buffer_.Print();
+void UFEConfigFrame::printBuffer() {
+  Buffer_.print();
 }
 

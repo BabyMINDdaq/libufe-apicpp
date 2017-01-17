@@ -8,23 +8,24 @@ public:
   UFEConfigBuffer();
   virtual ~UFEConfigBuffer() {delete[] buffer_;}
 
-  uint32_t* GetData() { return buffer_;}
-  unsigned int GetSize() {return size_;}
+  uint32_t* getData()    const { return buffer_;}
+  unsigned int getSize() const {return size_;}
 
-  void SetActualSize(int s) {actual_size_ = s;}
-  void LoadConfigFromTextFile(std::string file);
-  void Reset();
-  void Dump();
-  void DumpToFile(std::ofstream &file);
-  void Print();
-  void ReverseDump();
+  void setActualSize(int s) {actual_size_ = s;}
+  void loadConfigFromTextFile(std::string file);
+  void reset();
+  void dump();
+  void dumpToFile(std::ofstream &file);
+  void loadFromFile(std::ifstream &file);
+  void print();
+  void reverseDump();
 
-  void SetBitField(unsigned int index, unsigned int size, unsigned int value);
-  void SetBitField(Variable var, char mode='n');
-  uint16_t SetParams(const Parameters &par);
+  void setBitField(unsigned int index, unsigned int size, unsigned int value);
+  void setBitField(Variable var, char mode='n');
+  uint16_t setParams(const Parameters &par);
 
-  uint32_t Reverse(int val, const size_t size);
-  void     Reverse(const size_t size);
+  uint32_t reverse(int val, const size_t size);
+  void     reverse(const size_t size);
 
 private:
   static const unsigned int size_ = 36;

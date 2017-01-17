@@ -1,20 +1,26 @@
 #include "UFEError.h"
 
-UFEError::UFEError(const std::string &ErrorDescr,
-                       const std::string &ErrorLocation,
+using namespace std;
+
+UFEError::UFEError(const string &ErrorDescr,
+                       const string &ErrorLocation,
                        int Svr)
 : errorDescription_(ErrorDescr), errorLocation_(ErrorLocation), severity_(Svr) {}
 
-std::string UFEError::GetDescription() {
+string UFEError::getDescription() {
     return "*** " + errorDescription_ + " ***";
 }
 
-std::string UFEError::GetLocation() {
-  return SeverityToString() + " in " + errorLocation_;
+string UFEError::getLocation() {
+  return severityToString() + " in " + errorLocation_;
 }
 
-std::string UFEError::SeverityToString() {
-  std::string s;
+int UFEError::getSeverity() {
+  return severity_;
+}
+
+string UFEError::severityToString() {
+  string s;
   switch (severity_) {
     case WARNING:
       s = "WARNING";
@@ -30,5 +36,4 @@ std::string UFEError::SeverityToString() {
   }
   return s;
 }
-
 
