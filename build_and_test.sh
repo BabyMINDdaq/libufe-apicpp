@@ -16,7 +16,6 @@
 # 
 # You should have received a copy of the GNU General Public License
 # along with BabyMINDdaq. If not, see <http://www.gnu.org/licenses/>.
-/
 
 
 cd build;
@@ -36,6 +35,7 @@ if [ $? -eq 0 ]; then
   echo
 else
 
+  BMDAQ_INSTALL=ERROR
   echo "Failed unit tests. Aborting"
   echo
 

@@ -49,7 +49,6 @@ void UFEDataRecorder::init() {
 }
 
 void UFEDataRecorder::write(UFEDataContainer *data) {
-  cerr  << "UFEDataRecorder::write size: " << data->size() << endl;
   out_file_.write( (char*) data->buffer(), data->size());
   data_size_ += data->size();
   file_size_ += data->size();
@@ -77,7 +76,7 @@ void UFEDataRecorder::openNewFile() {
   ss << setfill('0') << setw (3);
   ss << file_number_;
   file_name_ = ss.str();
-  cerr << "UFEDataRecorder::openNewFile  " << file_name_ << endl;
+
   out_file_.open(file_name_, ofstream::binary);
   if ( !out_file_.is_open() ) {
     stringstream ss;
