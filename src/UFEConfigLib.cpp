@@ -33,21 +33,14 @@ void Variable::operator << (const Json::Value &v_json) {
 
       try {
         SET_MEMBER_INT(this, v_json, Default, 1)
-      } catch (std::runtime_error) {
+      } catch (...) {
 //         cout << v_json["EnumValues"] << endl;
         for (auto const& e : v_json["EnumValues"].getMemberNames()) {
           this->EnumValues_[e] = v_json["EnumValues"][e].asInt();
         }
 
         this->Default_ = EnumValues_[ v_json["Default"].asString() ];
-      } /* catch () {
-//         cout << v_json["EnumValues"] << endl;
-        for (auto const& e : v_json["EnumValues"].getMemberNames()) {
-          this->EnumValues_[e] = v_json["EnumValues"][e].asInt();
-        }
-
-        this->Default_ = EnumValues_[ v_json["Default"].asString() ];
-      }*/
+      }
 
       this->Value_ = this->Default_;
 

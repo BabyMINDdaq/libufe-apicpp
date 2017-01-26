@@ -85,7 +85,8 @@ void TestDataContainer::TestCopy() {
   CPPUNIT_ASSERT( c6.size() == 6 );
 
   for (int i=0; i<6; ++i) {
-    CPPUNIT_ASSERT( (c5.buffer())[i] == i+1 );
+    CPPUNIT_ASSERT( c5.buffer()[i] == i+1 );
+    c5.buffer()[i] = 0;
     CPPUNIT_ASSERT( (c6.buffer())[i] == i+1 );
   }
 
@@ -124,6 +125,7 @@ void TestDataContainer::TestMove() {
   UFEDataContainer c9(std::move(c8));
   CPPUNIT_ASSERT( c8.memsize() == 0 );
   CPPUNIT_ASSERT( c8.buffer() == nullptr );
+  CPPUNIT_ASSERT( c8.size() == 0 );
   CPPUNIT_ASSERT( c9.memsize() == 8 );
   CPPUNIT_ASSERT( c9.size() == 7 );
   CPPUNIT_ASSERT( c9.buffer() == d );

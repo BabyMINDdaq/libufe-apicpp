@@ -1,0 +1,48 @@
+
+{
+	"Devices" : 
+	[
+		
+		{
+			"Boards" : 
+			[
+				
+				{
+					"ConfigurationBinary" : "test-conf.dat",
+					"ConfigurationJosn" : "",
+					"Id" : 5,
+					"Name" : "Board"
+				}
+			],
+			"Id" : 0,
+			"Name" : "Device"
+		},
+		
+		{
+			"Boards" : 
+			[
+				
+				{
+					"ConfigurationBinary" : "test-conf.dat",
+					"ConfigurationJosn" : "",
+					"Id" : 3,
+					"Name" : "Board"
+				}
+			],
+			"Id" : 1,
+			"Name" : "Device"
+		}
+	],
+	"Name" : "BABY_MIND_CONFIG",
+	"RunNumber" : 4,
+	"UsbParam" : 
+	{
+		"AutoResetOnTimeout" : true,
+		"FileLimit" : 1024,
+		"PacketSize" : 1024,
+		"Packets" : 1,
+		"Queues" : 1,
+		"StopOnTimeout" : true,
+		"Timeout" : 15000
+	}
+}

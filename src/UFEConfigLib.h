@@ -4,7 +4,7 @@
 #include <string>
 #include <iostream>
 #include <vector>
-#include <json/json.h>
+#include <jsoncpp/json/json.h>
 
 #define THROW_ERROR(location, json_doc, key) { \
   std::string message; \

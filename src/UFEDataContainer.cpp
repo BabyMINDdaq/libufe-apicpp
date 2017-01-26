@@ -22,7 +22,6 @@
  */
 
 // C++
-#include <cstdint>
 #include <sstream>
 
 // libufecpp
@@ -104,6 +103,23 @@ UFEDataContainer& UFEDataContainer::operator=(UFEDataContainer &&c) {
 //   return *this;
 // }
 
+void UFEDataContainer::append(const uint8_t *data, size_t s) {
+  if ( (this->size_ + s) < this->mem_size_) {
+    memcpy(this->buffer_+this->size_, data, s);
+  } else {
+    uint8_t *new_buffer = new uint8_t[this->size_+s];
+    this->mem_size_ = this->size_ + s;
+
+    memcpy(new_buffer, this->buffer_, this->size_);
+    memcpy(new_buffer+this->size_, data, s);
+
+    delete[] this->buffer_;
+    this->buffer_ = new_buffer;
+  }
+
+  this->size_ += s;
+}
+
 void UFEDataContainer::append(const UFEDataContainer &c) {
   this->append(c, 0, c.size());
 }
@@ -117,28 +133,17 @@ void UFEDataContainer::append(const UFEDataContainer &c, unsigned int pos, size_
                     UFEError::FATAL);
   }
 
-  if ( (this->size_ + size) < this->mem_size_) {
-    memcpy(this->buffer_+this->size_, c.buffer_+pos, size);
-  } else {
-    uint8_t *new_buffer = new uint8_t[this->size_+size];
-    this->mem_size_ = this->size_ + size;
-
-    memcpy(new_buffer, this->buffer_, this->size_);
-    memcpy(new_buffer+this->size_, c.buffer_+pos, size);
-
-    delete[] this->buffer_;
-    this->buffer_ = new_buffer;
+  for (auto const & h: c.spill_headers_) {
+    if (h>=pos && h <pos+size)
+      this->spill_headers_.push_back(this->size_+h-pos);
   }
 
-  for (auto const & h: c.spill_headers_)
-    if (h>pos && h <=pos+size)
-      this->spill_headers_.push_back(this->size_+h-pos);
-
-  for (auto const & t: c.spill_trailers_)
-    if (t>pos && t <=pos+size)
+  for (auto const & t: c.spill_trailers_) {
+    if (t>=pos && t <pos+size)
       this->spill_trailers_.push_back(this->size_+t-pos);
+  }
 
-  this->size_ += size;
+  this->append(c.buffer_+pos, size);
 }
 
 UFEDataContainer& UFEDataContainer::operator+=(const UFEDataContainer &c) {
@@ -156,8 +161,8 @@ void UFEDataContainer::setBuffer(uint8_t* b) {
 
 void UFEDataContainer::clear() {
   this->resize(0);
-  spill_headers_.clear();
-  spill_trailers_.clear();
+  spill_headers_.resize(0);
+  spill_trailers_.resize(0);
   board_id_ = -1;
 }
 

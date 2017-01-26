@@ -26,6 +26,8 @@
 
 // C++
 #include <vector>
+#include <cstdint>
+#include <cstddef>
 
 class UFEDataContainer {
 public:
@@ -40,11 +42,10 @@ public:
   UFEDataContainer& operator=(const UFEDataContainer &c);
   UFEDataContainer& operator=(UFEDataContainer &&c);
 
+  void append(const uint8_t *data, size_t s);
   void append(const UFEDataContainer &c);
   void append(const UFEDataContainer &c, unsigned int pos, size_t size);
   UFEDataContainer& operator+=(const UFEDataContainer &c);
-
-  void init(size_t bsize);
 
   void setBuffer(uint8_t* b);
   uint8_t* buffer() const {return buffer_;}
@@ -60,8 +61,8 @@ public:
 
   uint32_t* get32bWordPtr(unsigned int i=0);
 
-  std::vector<uint64_t> spill_headers_;
-  std::vector<uint64_t> spill_trailers_;
+  std::vector<size_t> spill_headers_;
+  std::vector<size_t> spill_trailers_;
 
 private:
   uint8_t  *buffer_;

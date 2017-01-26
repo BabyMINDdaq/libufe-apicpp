@@ -43,16 +43,17 @@ UFEDataRecorder::~UFEDataRecorder() {
 }
 
 void UFEDataRecorder::init() {
-  UFEContext *ctx = UFEContext::instance();
-  run_number_ = ctx->bm_config_doc_["RunNumber"].asInt();
+//   UFEContext *ctx = UFEContext::instance();
+//   run_number_ = ctx->bm_config_doc_["RunNumber"].asInt();
   this->openNewFile();
 }
 
 void UFEDataRecorder::write(UFEDataContainer *data) {
+  cerr  << "UFEDataRecorder::write size: " << data->size() << endl;
   out_file_.write( (char*) data->buffer(), data->size());
   data_size_ += data->size();
   file_size_ += data->size();
-  data->clear();
+//   data->clear();
 
   if (file_size_ > max_file_size_) {
     out_file_.close();
@@ -63,7 +64,7 @@ void UFEDataRecorder::write(UFEDataContainer *data) {
 }
 
 void UFEDataRecorder::close() {
-  cerr << "UFEDataRecorder::close\n";
+//   cerr << "UFEDataRecorder::close\n";
   out_file_.close();
   run_number_++;
   UFEContext *ctx = UFEContext::instance();
@@ -76,6 +77,7 @@ void UFEDataRecorder::openNewFile() {
   ss << setfill('0') << setw (3);
   ss << file_number_;
   file_name_ = ss.str();
+  cerr << "UFEDataRecorder::openNewFile  " << file_name_ << endl;
   out_file_.open(file_name_, ofstream::binary);
   if ( !out_file_.is_open() ) {
     stringstream ss;

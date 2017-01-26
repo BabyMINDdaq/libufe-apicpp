@@ -46,7 +46,6 @@ int main(int argc, char* argv[]) {
 //   SetErrorHdlr();
 
   using namespace CppUnit;
-//   SetErrorHdlr();
 
   // Informs test-listener about testresults.
   CPPUNIT_NS::TestResult testresult;

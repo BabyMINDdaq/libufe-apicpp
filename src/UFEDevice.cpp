@@ -179,9 +179,8 @@ void UFEDevice::configFromJson(int boardId, string file) {
   frame.loadConfigFrameFromJsonFile(config_descr_file);
   frame.loadReadoutParamFromJsonFile(file, this->readout_par_);
 
-  uint16_t dpar;
-  frame.loadDirectParamFromJsonFile(file, dpar);
-  this->setDirectParams(boardId, dpar);
+  frame.loadDirectParamFromJsonFile(file, this->direct_par_);
+  this->setDirectParams();
 
   for (int xDev=0; xDev<4; ++xDev) {
     frame.loadUserConfigFromJsonFile(file, xDev);
@@ -239,16 +238,31 @@ void UFEDevice::configFromJson(int boardId, string file) {
 }
 
 void UFEDevice::setDirectParams(int boardId, uint16_t par) {
-  int status_ = ufe_set_direct_param(this->handle_, boardId, &par);
-  if (status_) {
+  direct_par_ = par;
+  setDirectParams(boardId);
+}
+
+void UFEDevice::setDirectParams(int boardId) {
+  if (boardId < 0) {
+    for (auto const & b: this->boards_) {
+      status_ = ufe_set_direct_param(this->handle_, b, &this->direct_par_);
+      if (status_)
+        break;
+    }
+  } else {
+    status_ = ufe_set_direct_param(this->handle_, boardId, &this->direct_par_);
+  }
+
+  if (status_ != 0) {
     stringstream ss;
     ss << "Error when setting direct params on board " << boardId
        << " (status: " <<  status_ << ").";
     throw UFEError( ss.str(),
-                    "int UFEDevice::setDirectParams(int, string)",
+                    "int UFEDevice::setDirectParams(int)",
                     UFEError::FATAL);
   }
 }
+
 
 std::string UFEDevice::boardsToString() {
   stringstream ss;

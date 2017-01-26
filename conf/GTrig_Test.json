@@ -1,0 +1,2942 @@
+{
+  "$type": "UnigeFrontEnd.Config.DataRoot",
+  "Name": "FEB_CONFIG",
+  "Version": "1.2",
+  "Children": [
+    {
+      "$type": "UnigeFrontEnd.Config.DataArray",
+      "Name": "Board",
+      "Children": [
+        {
+          "$type": "UnigeFrontEnd.Config.DataVarList",
+          "Name": "UsbParam",
+          "Children": {
+            "Timeout": 1500,
+            "StopOnTimeout": false,
+            "AutoResetOnTimeout": true,
+            "PacketSize": 512,
+            "Packets": 32,
+            "FileLimit": 1000,
+            "Queues": 1
+          }
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DataVarList",
+          "Name": "DirectParam",
+          "Children": {
+            "GlobalTrigEn": true,
+            "AsicEventEn": false,
+            "HvOn": true,
+            "ReadoutEn": false,
+            "InternalGenEn": false,
+            "FifoDataClear": true
+          }
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DataVarList",
+          "Name": "DataReadoutParam",
+          "Children": {
+            "GlobalTrigEn": true,
+            "AsicEventEn": true,
+            "ReadoutEn": true,
+            "InternalGenEn": false
+          }
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DataVarList",
+          "Name": "StatusParam",
+          "Children": {}
+        }
+      ]
+    },
+    {
+      "$type": "UnigeFrontEnd.Config.DataArray",
+      "Name": "ASICS",
+      "Children": [
+        {
+          "$type": "UnigeFrontEnd.Config.DataArray",
+          "Name": "ASIC0",
+          "Children": [
+            {
+              "$type": "UnigeFrontEnd.Config.DataArray",
+              "Name": "Channels",
+              "Children": [
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel0",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel1",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel2",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel3",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel4",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel5",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel6",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel7",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel8",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel9",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel10",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel11",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel12",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel13",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel14",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel15",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel16",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel17",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel18",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel19",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel20",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel21",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel22",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel23",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel24",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel25",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel26",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel27",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel28",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel29",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel30",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel31",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DataVarList",
+              "Name": "PowerModes",
+              "Children": {
+                "FastShaperEn": true,
+                "FastShaperDisPP": true,
+                "FastShaperFollowerDisPP": true,
+                "DiscriEn": true,
+                "DiscriDisPP": true,
+                "Discri_tEn": true,
+                "Discri_tDisPP": true,
+                "DAC4bEn": true,
+                "DAC4bDisPP": true,
+                "DAC4b_tEn": true,
+                "DAC4b_tDisPP": true,
+                "TempEn": true,
+                "TempDisPP": true,
+                "BandGapEn": true,
+                "BandGapDisPP": true,
+                "DAC10bEn": true,
+                "DAC10bDisPP": true,
+                "DAC10b_tEn": true,
+                "DAC10b_tDisPP": true,
+                "ProbeOTAqEn": true,
+                "ProbeOTAqDisPP": true,
+                "ValEvtRxEn": true,
+                "ValEvtRxDisPP": true,
+                "RazChnRxEn": true,
+                "RazChnRxDisPP": true,
+                "HG_T_H_En": true,
+                "HG_T_H_DisPP": true,
+                "HG_PdetEn": true,
+                "HG_PdetDisPP": true,
+                "HG_SlowShaperEn": true,
+                "HG_SlowShaperDisPP": true,
+                "HG_PA_En": true,
+                "HG_PA_DisPP": true,
+                "HG_OTAqEn": true,
+                "HG_OTAqDisPP": true,
+                "LG_TH_En": true,
+                "LG_TH_DisPP": true,
+                "LG_PdetEn": true,
+                "LG_PdetDisPP": true,
+                "LG_SlowShaperEn": true,
+                "LG_SlowShaperDisPP": true,
+                "LG_PA_En": true,
+                "LG_PA_DisPP": true,
+                "LG_OTAqEn": true,
+                "LG_OTAqDisPP": true
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DataVarList",
+              "Name": "GlobalControl",
+              "Children": {
+                "HG_SCAorPeakD": false,
+                "HG_SH_TimeConstant": 1,
+                "LG_SCAorPeakD": false,
+                "LG_SH_TimeConstant": 1,
+                "LG_PA_WeakBias": false,
+                "DAC10b": 50,
+                "DAC10b_t": 50,
+                "TriggerPolarity": false,
+                "En32Trigger": true,
+                "EnHitMuxOut": false,
+                "EnOR32": true,
+                "EnNOR32": false,
+                "EnNOR32_t": false,
+                "InputDAC_4V5ref": true,
+                "InputDAC_En": true,
+                "FastShaperOnLG": false,
+                "RSorDiscri": false,
+                "SCAweakBias": false,
+                "PeakSensingBypass": false,
+                "SelTrigExtPSC": false,
+                "TestbOTAq": false
+              }
+            }
+          ]
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DataArray",
+          "Name": "ASIC1",
+          "Children": [
+            {
+              "$type": "UnigeFrontEnd.Config.DataArray",
+              "Name": "Channels",
+              "Children": [
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel0",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel1",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel2",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel3",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel4",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel5",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel6",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel7",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel8",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel9",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel10",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel11",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel12",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel13",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel14",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel15",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel16",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel17",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel18",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel19",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel20",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel21",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel22",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel23",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel24",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel25",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel26",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel27",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel28",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel29",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel30",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel31",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DataVarList",
+              "Name": "PowerModes",
+              "Children": {
+                "FastShaperEn": true,
+                "FastShaperDisPP": true,
+                "FastShaperFollowerDisPP": true,
+                "DiscriEn": true,
+                "DiscriDisPP": true,
+                "Discri_tEn": true,
+                "Discri_tDisPP": true,
+                "DAC4bEn": true,
+                "DAC4bDisPP": true,
+                "DAC4b_tEn": true,
+                "DAC4b_tDisPP": true,
+                "TempEn": true,
+                "TempDisPP": true,
+                "BandGapEn": true,
+                "BandGapDisPP": true,
+                "DAC10bEn": true,
+                "DAC10bDisPP": true,
+                "DAC10b_tEn": true,
+                "DAC10b_tDisPP": true,
+                "ProbeOTAqEn": true,
+                "ProbeOTAqDisPP": true,
+                "ValEvtRxEn": true,
+                "ValEvtRxDisPP": true,
+                "RazChnRxEn": true,
+                "RazChnRxDisPP": true,
+                "HG_T_H_En": true,
+                "HG_T_H_DisPP": true,
+                "HG_PdetEn": true,
+                "HG_PdetDisPP": true,
+                "HG_SlowShaperEn": true,
+                "HG_SlowShaperDisPP": true,
+                "HG_PA_En": true,
+                "HG_PA_DisPP": true,
+                "HG_OTAqEn": true,
+                "HG_OTAqDisPP": true,
+                "LG_TH_En": true,
+                "LG_TH_DisPP": true,
+                "LG_PdetEn": true,
+                "LG_PdetDisPP": true,
+                "LG_SlowShaperEn": true,
+                "LG_SlowShaperDisPP": true,
+                "LG_PA_En": true,
+                "LG_PA_DisPP": true,
+                "LG_OTAqEn": true,
+                "LG_OTAqDisPP": true
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DataVarList",
+              "Name": "GlobalControl",
+              "Children": {
+                "HG_SCAorPeakD": false,
+                "HG_SH_TimeConstant": 1,
+                "LG_SCAorPeakD": false,
+                "LG_SH_TimeConstant": 1,
+                "LG_PA_WeakBias": false,
+                "DAC10b": 50,
+                "DAC10b_t": 50,
+                "TriggerPolarity": false,
+                "En32Trigger": true,
+                "EnHitMuxOut": false,
+                "EnOR32": true,
+                "EnNOR32": false,
+                "EnNOR32_t": false,
+                "InputDAC_4V5ref": true,
+                "InputDAC_En": true,
+                "FastShaperOnLG": false,
+                "RSorDiscri": false,
+                "SCAweakBias": false,
+                "PeakSensingBypass": false,
+                "SelTrigExtPSC": false,
+                "TestbOTAq": false
+              }
+            }
+          ]
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DataArray",
+          "Name": "ASIC2",
+          "Children": [
+            {
+              "$type": "UnigeFrontEnd.Config.DataArray",
+              "Name": "Channels",
+              "Children": [
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel0",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel1",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel2",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel3",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel4",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel5",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel6",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel7",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel8",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel9",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel10",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel11",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel12",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel13",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel14",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel15",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel16",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel17",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel18",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel19",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel20",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel21",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel22",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel23",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel24",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel25",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel26",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel27",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel28",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel29",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel30",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel31",
+                  "Children": {
+                    "DAC4bTrigger_t": 15,
+                    "DAC4bTrigger": 15,
+                    "inputDAC": 135,
+                    "inputDAC_En": true,
+                    "HG_Gain": 50,
+                    "HG_CTest": false,
+                    "LG_Gain": 55,
+                    "LG_CTest": false,
+                    "PA_DIS": false,
+                    "DiscriMask": false
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DataVarList",
+              "Name": "PowerModes",
+              "Children": {
+                "FastShaperEn": true,
+                "FastShaperDisPP": true,
+                "FastShaperFollowerDisPP": true,
+                "DiscriEn": true,
+                "DiscriDisPP": true,
+                "Discri_tEn": true,
+                "Discri_tDisPP": true,
+                "DAC4bEn": true,
+                "DAC4bDisPP": true,
+                "DAC4b_tEn": true,
+                "DAC4b_tDisPP": true,
+                "TempEn": true,
+                "TempDisPP": true,
+                "BandGapEn": true,
+                "BandGapDisPP": true,
+                "DAC10bEn": true,
+                "DAC10bDisPP": true,
+                "DAC10b_tEn": true,
+                "DAC10b_tDisPP": true,
+                "ProbeOTAqEn": true,
+                "ProbeOTAqDisPP": true,
+                "ValEvtRxEn": true,
+                "ValEvtRxDisPP": true,
+                "RazChnRxEn": true,
+                "RazChnRxDisPP": true,
+                "HG_T_H_En": true,
+                "HG_T_H_DisPP": true,
+                "HG_PdetEn": true,
+                "HG_PdetDisPP": true,
+                "HG_SlowShaperEn": true,
+                "HG_SlowShaperDisPP": true,
+                "HG_PA_En": true,
+                "HG_PA_DisPP": true,
+                "HG_OTAqEn": true,
+                "HG_OTAqDisPP": true,
+                "LG_TH_En": true,
+                "LG_TH_DisPP": true,
+                "LG_PdetEn": true,
+                "LG_PdetDisPP": true,
+                "LG_SlowShaperEn": true,
+                "LG_SlowShaperDisPP": true,
+                "LG_PA_En": true,
+                "LG_PA_DisPP": true,
+                "LG_OTAqEn": true,
+                "LG_OTAqDisPP": true
+              }
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DataVarList",
+              "Name": "GlobalControl",
+              "Children": {
+                "HG_SCAorPeakD": false,
+                "HG_SH_TimeConstant": 1,
+                "LG_SCAorPeakD": false,
+                "LG_SH_TimeConstant": 1,
+                "LG_PA_WeakBias": false,
+                "DAC10b": 50,
+                "DAC10b_t": 50,
+                "TriggerPolarity": false,
+                "En32Trigger": true,
+                "EnHitMuxOut": false,
+                "EnOR32": true,
+                "EnNOR32": false,
+                "EnNOR32_t": false,
+                "InputDAC_4V5ref": true,
+                "InputDAC_En": true,
+                "FastShaperOnLG": false,
+                "RSorDiscri": false,
+                "SCAweakBias": false,
+                "PeakSensingBypass": false,
+                "SelTrigExtPSC": false,
+                "TestbOTAq": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$type": "UnigeFrontEnd.Config.DataArray",
+      "Name": "FPGA",
+      "Children": [
+        {
+          "$type": "UnigeFrontEnd.Config.DataArray",
+          "Name": "ASIC0",
+          "Children": [
+            {
+              "$type": "UnigeFrontEnd.Config.DataArray",
+              "Name": "Channels",
+              "Children": [
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel0",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel1",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel2",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel3",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel4",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel5",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel6",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel7",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel8",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel9",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel10",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel11",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel12",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel13",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel14",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel15",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel16",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel17",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel18",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel19",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel20",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel21",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel22",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel23",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel24",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel25",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel26",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel27",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel28",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel29",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel30",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel31",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DataVarList",
+              "Name": "GlobalControl",
+              "Children": {
+                "TempEn": false,
+                "L1ThresholdHG": 0,
+                "L1ThresholdLG": 0
+              }
+            }
+          ]
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DataArray",
+          "Name": "ASIC1",
+          "Children": [
+            {
+              "$type": "UnigeFrontEnd.Config.DataArray",
+              "Name": "Channels",
+              "Children": [
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel0",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel1",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel2",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel3",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel4",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel5",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel6",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel7",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel8",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel9",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel10",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel11",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel12",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel13",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel14",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel15",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel16",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel17",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel18",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel19",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel20",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel21",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel22",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel23",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel24",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel25",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel26",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel27",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel28",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel29",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel30",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel31",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DataVarList",
+              "Name": "GlobalControl",
+              "Children": {
+                "TempEn": false,
+                "L1ThresholdHG": 0,
+                "L1ThresholdLG": 0
+              }
+            }
+          ]
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DataArray",
+          "Name": "ASIC2",
+          "Children": [
+            {
+              "$type": "UnigeFrontEnd.Config.DataArray",
+              "Name": "Channels",
+              "Children": [
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel0",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel1",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel2",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel3",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel4",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel5",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel6",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel7",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel8",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel9",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel10",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel11",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel12",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel13",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel14",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel15",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel16",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel17",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel18",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel19",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel20",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel21",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel22",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel23",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel24",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel25",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel26",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel27",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel28",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel29",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel30",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                },
+                {
+                  "$type": "UnigeFrontEnd.Config.DataVarList",
+                  "Name": "Channel31",
+                  "Children": {
+                    "HitEn": true,
+                    "HG_En": true,
+                    "LG_En": true,
+                    "OR96tAdcEn": true
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "UnigeFrontEnd.Config.DataVarList",
+              "Name": "GlobalControl",
+              "Children": {
+                "TempEn": false,
+                "L1ThresholdHG": 0,
+                "L1ThresholdLG": 0
+              }
+            }
+          ]
+        },
+        {
+          "$type": "UnigeFrontEnd.Config.DataVarList",
+          "Name": "GlobalControl",
+          "Children": {
+            "L0HitLimit": false,
+            "L0TrigPerCounterEn": false,
+            "L1HvEn": false,
+            "L1HaLimit": false,
+            "L1HoldHG_Delay": 5,
+            "L1HoldLG_Delay": 5,
+            "L1AdcDelay": 0,
+            "L1ThresholdMode": "Static",
+            "L1IthmFast": true,
+            "L1ExtSpill": false,
+            "L1TrigSync": false,
+            "L1OR96_Fast": true,
+            "L1AdcCalSync": false,
+            "L1AnalogLimit10": true,
+            "L1TriggerLimit10": true,
+            "ExtGlobalTrig": true,
+            "ExtTriggerDelay": 0,
+            "IntGenPeriod": 20,
+            "L2DoutDelay": 0,
+            "L2RequestMode": false,
+            "L2TDMEn": false,
+            "L2ChainNextEn": false,
+            "HoldDis": false,
+            "ResetPaDis": true,
+            "ResetPscDis": true,
+            "RazChnDis": false,
+            "HoldOnRazChn": false,
+            "ComputeOutEn": false,
+            "BaselineReset": false,
+            "BaselineOutEn": false,
+            "CompareOutEn": true,
+            "HoldLow": false,
+            "AdcComputeEn": false,
+            "Or32tADC": false,
+            "IndivTriggerDelay": 5,
+            "TimeoutDivider": 25,
+            "ReadoutOnStartSignal": false,
+            "GtrigStartSignalorSpill": true,
+            "Reserved0": 65,
+            "Reserved1": 65,
+            "Debug0": 0,
+            "Debug1": 0
+          }
+        }
+      ]
+    }
+  ]
+}

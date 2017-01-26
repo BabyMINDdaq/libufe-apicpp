@@ -28,7 +28,7 @@
 #include <cppunit/TestFixture.h>
 #include <cppunit/extensions/HelperMacros.h>
 
-// Mic11
+// libufecpp
 #include "src/UFEDataContainer.h"
 
 

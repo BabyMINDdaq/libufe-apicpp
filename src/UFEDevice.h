@@ -39,11 +39,11 @@
 class UFEDevice {
 public:
   UFEDevice()
-  : device_(nullptr), handle_(nullptr), readout_par_(0x580),
+  : device_(nullptr), handle_(nullptr), readout_par_(0x580), direct_par_(0x8280),
     status_(0), time_(0), read_tot_(0) {}
 
   UFEDevice(libusb_device *dev)
-  : device_(dev), handle_(nullptr), readout_par_(0x580),
+  : device_(dev), handle_(nullptr), readout_par_(0x580), direct_par_(0x8280),
     status_(0), time_(0), read_tot_(0) {}
 
   virtual ~UFEDevice() {}
@@ -64,6 +64,7 @@ public:
   void configFromJson(int boardId, std::string file);
 
   void setDirectParams(int boardId, uint16_t par);
+  void setDirectParams(int boardId=-1);
 
   libusb_device         *device_;
   libusb_device_handle  *handle_;
@@ -72,6 +73,7 @@ public:
   std::string boardsToString();
 
   std::vector<int> boards() const {return boards_;}
+  std::vector<int>* boardsPtr()   {return &boards_;}
   int status()              const {return status_;}
   int read_tot()            const {return read_tot_;}
   bool is_open()            const {return is_open_;}
@@ -79,6 +81,7 @@ public:
 private:
   std::vector<int>   boards_;
   uint16_t readout_par_;
+  uint16_t direct_par_;
   int status_;
 
   bool is_open_;

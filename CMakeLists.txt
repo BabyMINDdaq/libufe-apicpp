@@ -9,6 +9,7 @@ set(UFEAPI_DIR ${CMAKE_SOURCE_DIR})
 
 include(${CMAKE_BINARY_DIR}/FindLibUfec.cmake)
 include(${CMAKE_BINARY_DIR}/FindJsonCpp.cmake)
+include(${CMAKE_BINARY_DIR}/FindCppUnit.cmake)
 
 configure_file( ${CMAKE_BINARY_DIR}/deff.h.cmake
                 ${CMAKE_SOURCE_DIR}/src/UFEDeff.h)
@@ -44,6 +45,9 @@ message(STATUS "Linker flags : " ${CMAKE_EXE_LINKER_FLAGS}\n)
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/src)
 add_subdirectory(${CMAKE_SOURCE_DIR}/tools)
-add_subdirectory(${CMAKE_SOURCE_DIR}/tests)
+
+if    (CPPUNIT_FOUND)
+  add_subdirectory(${CMAKE_SOURCE_DIR}/tests)
+endif (CPPUNIT_FOUND)
 
 
