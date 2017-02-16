@@ -45,6 +45,8 @@ UFEDataRecorder::~UFEDataRecorder() {
 void UFEDataRecorder::init() {
 //   UFEContext *ctx = UFEContext::instance();
 //   run_number_ = ctx->bm_config_doc_["RunNumber"].asInt();
+  data_size_ = 0;
+  file_number_ = 0;
   this->openNewFile();
 }
 

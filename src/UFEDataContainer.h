@@ -69,7 +69,6 @@ private:
   size_t    size_;
   size_t    mem_size_;
   int board_id_;
-
 };
 
 #endif

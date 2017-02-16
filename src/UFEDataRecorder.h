@@ -47,6 +47,7 @@ class UFEDataRecorder {
   void init();
   void write(UFEDataContainer *data);
   void close();
+
 private:
   void openNewFile();
 
